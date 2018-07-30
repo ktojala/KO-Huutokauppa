@@ -13,3 +13,5 @@ Toimintoja:
 - Meklarin seurantalista
 - Lasku asiakkaalle
 - Kaupan sulkeminen
+
+Sovelluksen <_a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
