@@ -17,3 +17,5 @@ Toimintoja:
 Sovelluksen <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
 
 HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
+
+Testilinkki dokumentaatioon: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/eka.md">Eka doc</a>
