@@ -1,8 +1,10 @@
-# H1 KO-Huutokauppa
+# KO-Huutokauppa
 
 Tekstiä
 
-# H2 Käyttötapauksia
+## Käyttötapauksia
 
-Tapaus
-
+1. Tapaus 1
+⋅⋅⋅Kuvaus
+2. Tapaus 2
+⋅⋅⋅Kuvaus
