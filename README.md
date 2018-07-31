@@ -15,3 +15,5 @@ Toimintoja:
 - Kaupan sulkeminen
 
 Sovelluksen <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
+
+HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
