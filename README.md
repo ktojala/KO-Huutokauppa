@@ -14,11 +14,15 @@ Toimintoja:
 - Lasku asiakkaalle
 - Kaupan sulkeminen
 
-Sovelluksen <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
-
 HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
+
+## Linkit:
+
+    <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
+
+
 
 Testilinkki dokumentaatioon: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/eka.md">Eka doc</a>
 
-Kayttötapauskaavio: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/toka.md">Toka doc</a>
+    <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/toka.md">Kayttötapauskaavio</a>
 
