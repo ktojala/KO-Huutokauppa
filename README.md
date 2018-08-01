@@ -3,11 +3,13 @@
 Tietokantasovellusharjoitus - tehtävän kuvaus (kuvaukseen voi tulla vielä muutoksia)
 
 Huutokauppakamari Verkkodiili haluaa rakentaa huutokauppajärjestelmän, jonka avulla se voi kaupata tuotteita verkossa.
-
-Huutokauppakamari luokittelee myyntiin saamansa tuotteet ja laatii niistä myyntiesitteen. Esitteessä on mm. tuotten kuvaus ja vähimmäishinta. Siihen voi sisältyä tuotteen kuva. Esitteessä kerrotaan myös milloin kauppa alkaa ja päättyy. Kun huutokauppa on avattu, asiakas saa näkyviinsä myös tämänhetkisen korkeimman tarjouksen.
+Huutokauppakamari luokittelee myyntiin saamansa tuotteet ja laatii niistä myyntiesitteen. Esitteessä on mm. tuotteen kuvaus ja vähimmäishinta. Siihen voi sisältyä tuotteen kuva. Esitteessä kerrotaan myös milloin kauppa alkaa ja päättyy. Kun huutokauppa on avattu, asiakas saa näkyviinsä myös tämänhetkisen korkeimman tarjouksen.
 Kuka tahansa pääsee katsomaan tarjolla olevia tuotteita, mutta tarjouksen tekeminen edellyttää kirjautumista asiakkaaksi. Tarjouksen yhteydessä asiakas antaa henkilötietonsa. 
-Meklarit valvovat kauppaa ottamalla aika ajoin seurantalistoja, joissa pitäisi käydä esiin tuotteista tehtyjen tarjousten määrä, nykyinen korkein tarjous ja erityisesti huomattavat poikkeamat tarjoushinnassa. Tällaisissa tapauksissa meklari varmistaa tarjouksen aitouden. Näin tehdäään myös aina ennen kaupan sulkemista. Varmistus voidaan hoitaa sähköpostitse. Jos huutokaupan päättyessä viimeisin tarjous ei ollut aito myydään tavara edelliselle tarjoajalle, jne. Meklari sulkee kaupan kun asiakas on maksanut laskun (järjestelmän ulkopuolella).
+
+Meklarit valvovat kauppaa ottamalla aika ajoin seurantalistoja, joista pitäisi käydä esiin tuotteista tehtyjen tarjousten määrä, nykyinen korkein tarjous ja erityisesti huomattavat poikkeamat tarjoushinnassa. Tällaisissa tapauksissa meklari varmistaa tarjouksen aitouden. Näin tehdään myös aina ennen kaupan sulkemista. Varmistus voidaan hoitaa sähköpostitse. Jos huutokaupan päättyessä viimeisin tarjous ei ollut aito myydään tavara edelliselle tarjoajalle, jne. Meklari sulkee kaupan kun asiakas on maksanut laskun (järjestelmän ulkopuolella).
+
 Vain huutokauppakamarin edustaja voi lisätä huutokaupan sivuille tuotteita ja tuoteryhmiä sekä tarvittaessa muokata ja poistaa näitä, samoin kuin verkossa näkyviä toimintaohjeita.
+
 Toimintoja:
 - Tuotetietojen syöttö ja muokkaus
 - Tuotteen poistaminen ja siirto toteutuneiden kauppojen luetteloon
@@ -18,6 +20,7 @@ Toimintoja:
 - Meklarin seurantalistan tuottaminen
 - Lasku asiakkaalle
 - Kaupan sulkeminen tuotteen osalta
+- Ohjeiden muokkaus
 
 HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
 
