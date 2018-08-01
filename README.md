@@ -18,11 +18,9 @@ HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
 
 ## Linkit:
 
-    <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
+Sovelluksen <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Heroku-linkki</a>
 
-
+Käyttötapauskaavio <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/toka.md">Kayttötapauskaavio</a>
 
 Testilinkki dokumentaatioon: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/eka.md">Eka doc</a>
-
-    <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/toka.md">Kayttötapauskaavio</a>
 
