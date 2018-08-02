@@ -12,15 +12,16 @@ Vain huutokauppakamarin edustaja voi lisätä huutokaupan sivuille tuotteita ja 
 
 Toimintoja:
 - Tuotetietojen syöttö ja muokkaus
-- Tuotteen poistaminen ja siirto toteutuneiden kauppojen luetteloon
+- Tuotteen poistaminen ja tarvittaessa siirto toteutuneiden kauppojen luetteloon
 - Tuoteluokkien muokkaus, lisäys ja poisto
 - Tuotetietojen katselu
-- Kirjautuminen
+- Asiakkaaksi kirjautuminen, oman profiilin muokkaaminen ja irtisanoutuminen
 - Tarjouksen tekeminen
-- Meklarin seurantalistan tuottaminen
+- Meklarin seurantalistan tuottaminen ja tarjouksen poistaminen tarvittaessa
 - Lasku asiakkaalle
 - Kaupan sulkeminen tuotteen osalta
 - Ohjeiden muokkaus
+- Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi kauppojen määrät asiakkaan paikkakunnan mukaan
 
 HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
 
