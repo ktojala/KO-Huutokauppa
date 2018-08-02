@@ -2,5 +2,5 @@
 
 ## Käsitekaavio
 
-![](https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasitekaavio.ppdf)
+![](https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasitekaavio.pdf)
 
