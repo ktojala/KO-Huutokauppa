@@ -17,11 +17,10 @@ Toimintoja:
 - Tuotetietojen katselu
 - Asiakkaaksi kirjautuminen, oman profiilin muokkaaminen ja irtisanoutuminen
 - Tarjouksen tekeminen
-- Meklarin seurantalistan tuottaminen ja tarjouksen poistaminen tarvittaessa
+- Meklarin seurantalistan tuottaminen ja epäkelvon tarjouksen poistaminen
 - Lasku asiakkaalle
 - Kaupan sulkeminen tuotteen osalta
-- Ohjeiden muokkaus
-- Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi kauppojen määrät asiakkaan paikkakunnan mukaan
+- Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi ostomäärät ostajien paikkakunnan mukaan
 
 HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
 
