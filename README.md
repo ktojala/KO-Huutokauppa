@@ -28,10 +28,10 @@ HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
 
 <a href="https://tsoha-ko-huutokauppa.herokuapp.com">Sovellus Herokussa</a>
 
-<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/toka.md">Kayttötapauskaavio</a>
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kayttotapaus.md">Kayttötapauskaavio</a>
 
-<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/toka.md">Käsitekaavio</a>
-
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasite.md">Käsitekaavio</a>
 
 Testilinkki muuhun dokumentaatioon: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/eka.md">Eka doc</a>
 
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasite2.md">Käsitekaavio2</a>
