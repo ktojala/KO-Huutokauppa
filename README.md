@@ -34,4 +34,3 @@ HUOM: Alkuvaiheessa sovelluksena on viikon 2 todo-sovellus.
 
 Testilinkki muuhun dokumentaatioon: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/eka.md">Eka doc</a>
 
-<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasite2.md">Käsitekaavio2</a>
