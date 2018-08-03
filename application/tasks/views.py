@@ -23,6 +23,8 @@ def tasks_change(task_id):
     t.name = name
     db.session().commit()
 
+    return redirect(url_for("tasks_index"))
+
 
 @app.route("/tasks/<task_id>/", methods=["POST"])
 def tasks_set_done(task_id):
