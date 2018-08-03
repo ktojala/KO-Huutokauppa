@@ -18,7 +18,7 @@ def tasks_form():
 def tasks_set_done(task_id):
 
     t = Task.query.get(task_id)
-    t.muokkaa = True
+    t.done = True
     db.session().commit()
   
     return redirect(url_for("tasks_index"))
@@ -32,9 +32,4 @@ def tasks_create():
     db.session().commit()
   
     return redirect(url_for("tasks_index"))
-
-
-
-
-
 
