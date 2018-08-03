@@ -24,7 +24,7 @@ def tasks_set_done(task_id):
     return redirect(url_for("tasks_index"))
 
 
-@app.route("/tasks/<task_id>/", methods=["DELETE"])
+@app.route("/tasks/<task_id>/", methods=["GET"])
 def tasks_delete(task_id):
 
     Task.query.filter_by(id=task_id).delete()
