@@ -7,6 +7,12 @@ from application.tasks.models import Task
 def tasks_index():
     return render_template("tasks/list.html", tasks = Task.query.all())
 
+
+@app.route("/tasks", methods=["GET"])
+def tuoteryhmat_index():
+    return render_template("tasks/tuoteryhmat_list.html", tasks = Task.query.all())
+
+
 @app.route("/tasks/new/")
 def tasks_form():
     return render_template("tasks/new.html")
