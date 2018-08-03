@@ -27,18 +27,18 @@ def tasks_set_done(task_id):
 @app.route("/tasks/<task_id>/", methods=["POST"])
 def tasks_delete(task_id):
 
-	taskit = self.tasks_get_for_delete()
-	for taski in taskit:
-    	if taski.id == task_id: 
-			db.session.delete(task_id)
-    		db.session().commit()
-  
+    taskit = self.tasks_get_for_delete()
+    for taski in taskit:
+        if taski.id == task_id: 
+            db.session.delete(task_id)
+            db.session().commit()
+
     return redirect(url_for("tasks_index"))
 
 
 @app.route("/tasks/", methods=["GET"])
 def tasks_get_for_delete():
-	return Task.query.all()
+    return Task.query.all()
 
 
 @app.route("/tasks/", methods=["POST"])
