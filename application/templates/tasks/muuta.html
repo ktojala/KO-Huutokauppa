@@ -1,9 +1,0 @@
-{% extends "layout.html" %}
-  
-{% block body %}
-<form method="POST" action="{{ url_for('tasks_change') }}">
-  <input type="text" name="name"/>
-  <input type="submit" value="Muuta tuoteryhmä"/>
-</form>
-{% endblock %}
-
