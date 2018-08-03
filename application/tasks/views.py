@@ -10,7 +10,7 @@ def tasks_index():
 
 @app.route("/tasks", methods=["GET"])
 def tuoteryhmat_index():
-    return render_template("tasks/tuoteryhmat_list.html", tasks = Task.query.all())
+    return render_template("tasks/tuoteryhmat_list.html", tasks = Tuoteryhma.query.all())
 
 
 @app.route("/tasks/new/")
