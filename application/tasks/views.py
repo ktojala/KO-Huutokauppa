@@ -24,6 +24,16 @@ def tasks_set_done(task_id):
     return redirect(url_for("tasks_index"))
 
 
+@app.route("/tasks/<task_id>/", methods=["POST"])
+def tasks_deolete(task_id):
+
+    t = Task.query.get(task_id)
+    t.done = True
+    db.session().commit()
+  
+    return redirect(url_for("tasks_index"))
+
+
 @app.route("/tasks/", methods=["POST"])
 def tasks_create():
     t = Task(request.form.get("name"))
