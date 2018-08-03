@@ -2,6 +2,7 @@
 from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.tasks.models import Task
+from application.tasks.models import Tuoteryhma
 
 @app.route("/tasks", methods=["GET"])
 def tasks_index():
@@ -10,7 +11,7 @@ def tasks_index():
 
 @app.route("/tasks", methods=["GET"])
 def tuoteryhmat_index():
-    return render_template("tasks/tuoteryhmat_list.html", tasks = Tuoteryhma.query.all())
+    return render_template("tasks/tuoteryhmat_list.html", tuoteryhmat = Tuoteryhma.query.all())
 
 
 @app.route("/tasks/new/")

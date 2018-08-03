@@ -10,9 +10,9 @@
 
       <th></th>
     </tr>
-    {% for task in tasks %}
+    {% for tuoteryhma in tuoteryhmat%}
     <tr>
-      <td>{{ task.name }}</td>
+      <td>{{ tuoteryhma.name }}</td>
 
       <td>
 	<form method="POST" action="{{ url_for('tasks_set_done', task_id=task.id) }}">
