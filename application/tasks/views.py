@@ -14,6 +14,16 @@ def tasks_form():
     return render_template("tasks/new.html")
 
 
+
+
+@app.route("/tasks/<task_id>/", methods=["POST"])
+def tasks_change(task_id):
+    t = Task.query.get(task_id)
+    render_template("tasks/muuta.html")
+    t.name = name
+    db.session().commit()
+
+
 @app.route("/tasks/<task_id>/", methods=["POST"])
 def tasks_set_done(task_id):
 
