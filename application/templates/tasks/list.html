@@ -22,7 +22,7 @@
 	</form>
       </td>
       <td>
-	<form method="POST" action="{{ url_for('tasks_delete', task_id=task.id) }}">
+	<form method="DELETE" action="{{ url_for('tasks_delete', task_id=task.id) }}">
 	  <input type="submit" value="Poista"/>
 	</form>
       </td>
