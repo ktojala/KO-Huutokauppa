@@ -14,7 +14,6 @@ def tasks_form():
     return render_template("tasks/new.html")
 
 
-
 @app.route("/tasks/<task_id>/", methods=["POST"])
 def tasks_set_done(task_id):
 
