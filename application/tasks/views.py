@@ -28,7 +28,7 @@ def tasks_set_done(task_id):
 def tasks_delete(task_id):
 
     t = Task.query.get(task_id)
-    db.session().delete(t)
+    t.name = "roska"
     db.session().commit()
   
     return redirect(url_for("tasks_index"))
