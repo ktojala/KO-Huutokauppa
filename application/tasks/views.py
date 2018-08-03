@@ -24,7 +24,7 @@ def tasks_set_done(task_id):
     return redirect(url_for("tasks_index"))
 
 
-@app.route("/tasks/<task_id>/", methods=["PUT"])
+@app.route("/tasks/<task_id>/", methods=["POST"])
 def tasks_delete(task_id):
 
     db.session.delete(task_id)
