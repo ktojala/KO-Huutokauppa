@@ -13,3 +13,7 @@ class Task(db.Model):
         self.name = name
         self.done = False
 
+    def muokkaa(self, name):
+        self.name = name
+        self.done = True
+
