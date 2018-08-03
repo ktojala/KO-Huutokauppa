@@ -14,6 +14,16 @@ def tasks_form():
     return render_template("tasks/new.html")
 
 
+@app.route("/tasks/<task_id>/", methods=["POST"])
+def tasks_let_done(task_id):
+
+    t = Task.query.get(task_id)
+    redirect(url_for("tasks_form"))
+    Task.query.filter_by(id=task_id).add()
+    db.session().commit()
+  
+    return redirect(url_for("tasks_index"))
+
 
 
 @app.route("/tasks/<task_id>/", methods=["POST"])
