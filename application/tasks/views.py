@@ -27,10 +27,10 @@ def tasks_set_done(task_id):
 @app.route("/tasks/<task_id>/", methods=["POST"])
 def tasks_delete(task_id):
 
-    taskit = self.tasks_get_for_delete()
+    taskit = tasks_get_for_delete()
     for taski in taskit:
         if taski.id == task_id: 
-            db.session.delete(task_id)
+            db.session.delete(taski)
             db.session().commit()
 
     return redirect(url_for("tasks_index"))
