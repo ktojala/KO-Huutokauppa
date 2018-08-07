@@ -15,7 +15,7 @@ Toimintoja:
 - Tuotteen poistaminen ja tarvittaessa siirto toteutuneiden kauppojen luetteloon
 - Tuoteluokkien muokkaus, lisäys ja poisto
 - Tuotetietojen katselu
-- Asiakkaaksi kirjautuminen, oman profiilin muokkaaminen ja irtisanoutuminen
+- Asiakkaaksi rekisteröityminen, kirjautuminen, oman profiilin muokkaaminen ja rekisteristä irtisanoutuminen
 - Tarjouksen tekeminen
 - Meklarin seurantalistan tuottaminen ja epäkelvon tarjouksen poistaminen
 - Lasku asiakkaalle

@@ -8,6 +8,15 @@
     
     <body>
 
+      {% if current_user.is_authenticated %}
+      <p>
+	Kirjautunut nimellä: {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+      </p>
+      {% else %}
+      <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+      {% endif %}
+
+
 	  <h2>KO-Huutokauppa</h2>
 	  <p>
 		Kätevä nettihuutokauppa sinunkin tarpeisiisi.
@@ -15,10 +24,8 @@
 	  </p>
 
       <ul>
-
-	<li><a href="{{ url_for('tasks_index') }}">Selaa tuoteryhmiä</a></li>
-	<li><a href="{{ url_for('tasks_form') }}">Lisää tuoteryhmä</a></li>
-
+	    <li><a href="{{ url_for('tasks_index') }}">Selaa tuoteryhmiä</a></li>
+	    <li><a href="{{ url_for('tasks_form') }}">Lisää tuoteryhmä</a></li>
       </ul>
       
       {% block body %}
