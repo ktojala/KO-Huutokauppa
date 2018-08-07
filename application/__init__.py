@@ -5,14 +5,22 @@ app = Flask(__name__)
 
 # tietokanta
 from flask_sqlalchemy import SQLAlchemy
+
+import os
+
+if os.environ.get("HEROKU"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+else:
+
 # Kolme vinoviivaa kertoo, tiedosto sijaitsee tämän sovelluksen 
 # tiedostojen kanssa samassa paikassa
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///huutokauppa.db"
-app.config["SQLALCHEMY_ECHO"] = True
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///huutokauppa.db"
+    app.config["SQLALCHEMY_ECHO"] = True
 # Pyydettiin SQLAlchemyä tulostamaan kaikki SQL-kyselyt
 
 # Luodaan db-olio, jota käytetään tietokannan käsittelyyn
 db = SQLAlchemy(app)
+
 
 # oman sovelluksen toiminnallisuudet
 from application import views
@@ -22,6 +30,7 @@ from application.tasks import views
 
 from application.auth import models
 from application.auth import views
+
 
 # kirjautuminen
 from application.auth.models import User
@@ -40,4 +49,8 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 # luodaan taulut tietokantaan tarvittaessa
-db.create_all()
+try:
+    db.create_all()
+except:
+    pass
+
