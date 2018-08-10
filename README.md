@@ -22,7 +22,11 @@ Toimintoja:
 - Kaupan sulkeminen tuotteen osalta
 - Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi ostomäärät ostajien paikkakunnan mukaan
 
-HUOM: Myytava-linkit ohjautuvat jostain syystä Tuoteryhmaan edelleen, eivät siis toimi vielä..
+HUOM: Myytava-taulun tuotteita ei vielä ole linkitetty tuoteryhmiin.
+
+## Kirjautuminen:
+Käyttäjätunnus: testi
+Salasana:       kesti
 
 ## Linkit:
 

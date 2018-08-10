@@ -10,7 +10,7 @@ class TuoteryhmaForm(FlaskForm):
 
 class MyytavaForm(FlaskForm):
     name = StringField("Nimike myytävälle:", [validators.Length(min=3)])
-#    seloste = StringField("Tuoteseloste:", [validators.Length(min=1, max=144)])
+#    lisätietoa = StringField("Tuoteseloste:", [validators.Length(min=1, max=144)])
 #    hinta = IntegerField("Tarjous:", [validators.NumberRange(min=1)])
     done = BooleanField("Dani") 
 

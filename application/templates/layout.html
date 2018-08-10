@@ -24,10 +24,10 @@
 	  </p>
 
       <ul>
-	    <li><a href="{{ url_for('tasks_index') }}">Selaa tuoteryhmiä</a></li>
+	    <li><a href="{{ url_for('tuoteryhmat_index') }}">Selaa tuoteryhmiä</a></li>
 	    <li><a href="{{ url_for('myytavat_index') }}">Selaa myytäviä</a></li>
-	    <li><a href="{{ url_for('tasks_form') }}">Lisää tuoteryhmä</a></li>
-	    <li><a href="{{ url_for('myytavat_form') }}">Lisää uusi myytävä tuote</a></li>
+	    <li><a href="{{ url_for('tuoteryhma_form') }}">Lisää tuoteryhmä</a></li>
+	    <li><a href="{{ url_for('myytava_form') }}">Lisää uusi myytävä tuote</a></li>
       </ul>
       
       {% block body %}

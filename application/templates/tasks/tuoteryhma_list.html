@@ -10,19 +10,19 @@
       <th>Id</th>
       <th></th>
     </tr>
-    {% for task in tasks %}
+    {% for tuoteryhma in tuoteryhmat %}
     <tr>
-      <td>{{ task.name }}</td>
-      <td>{{ task.done }}</td>
-      <td>{{ task.id }}</td>
+      <td>{{ tuoteryhma.name }}</td>
+      <td>{{ tuoteryhma.done }}</td>
+      <td>{{ tuoteryhma.id }}</td>
 
 	  <td>
-	<form method="POST" action="{{ url_for('tasks_set_done', task_id=task.id) }}">
+	<form method="POST" action="{{ url_for('tuoteryhma_set_done', task_id=tuoteryhma.id) }}">
 	  <input type="submit" value="Muokkaa tuoteryhmää"/>
 	</form>
       </td>
       <td>
-	<form method="GET" action="{{ url_for('tasks_delete', task_id=task.id) }}">
+	<form method="GET" action="{{ url_for('tuoteryhma_delete', task_id=tuoteryhma.id) }}">
 	  <input type="submit" value="Poista tuoteryhmä"/>
 	</form>
       </td>

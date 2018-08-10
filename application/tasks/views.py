@@ -7,31 +7,31 @@ from application.tasks.forms import TuoteryhmaForm
 from application.tasks.models import Myytava
 from application.tasks.forms import MyytavaForm
 
-@app.route("/tasks/", methods=["GET"])
-def tasks_index():
-    return render_template("tasks/list.html", tasks = Tuoteryhma.query.all())
+@app.route("/tasks/1/", methods=["GET"])
+def tuoteryhmat_index():
+    return render_template("tasks/tuoteryhma_list.html", tuoteryhmat = Tuoteryhma.query.all())
 
 
-@app.route("/tasks/", methods=["GET"])
+@app.route("/tasks/2/", methods=["GET"])
 def myytavat_index():
     return render_template("tasks/myytava_list.html", myytavat = Myytava.query.all())
 
 
-@app.route("/tasks/new/")
+@app.route("/tasks/3/")
 @login_required
-def tasks_form():
-    return render_template("tasks/new.html", form = TuoteryhmaForm())
+def tuoteryhma_form():
+    return render_template("tasks/uusituoteryhma.html", form = TuoteryhmaForm())
 
 
-@app.route("/tasks/new/")
+@app.route("/tasks/4/")
 @login_required
-def myytavat_form():
+def myytava_form():
     return render_template("tasks/uusimyytava.html", form = MyytavaForm())
 
 
 @app.route("/tasks/<task_id>/", methods=["POST"])
 @login_required
-def tasks_set_done(task_id):
+def tuoteryhma_set_done(task_id):
 
     t = Tuoteryhma.query.get(task_id)
     t.done = True
@@ -41,25 +41,51 @@ def tasks_set_done(task_id):
 
     db.session().commit()
   
-    return redirect(url_for("tasks_index"))
+    return redirect(url_for("tuoteryhmat_index"))
 
 
 @app.route("/tasks/<task_id>/", methods=["GET"])
-def tasks_delete(task_id):
+def tuoteryhma_delete(task_id):
 
     Tuoteryhma.query.filter_by(id=task_id).delete()
     db.session().commit()
 
-    return redirect(url_for("tasks_index"))
+    return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tasks/", methods=["POST"])
+
+@app.route("/tasks/<myytava_id>/1/", methods=["POST"])
 @login_required
-def tasks_create():
+def myytava_set_done(myytava_id):
+
+    t = Myytava.query.get(myytava_id)
+    t.done = True
+
+# seuraava rivi ei vielä tarpeen
+#    t1 = Myytava(request.form.get("name"))
+
+    db.session().commit()
+  
+    return redirect(url_for("myytavat_index"))
+
+
+@app.route("/tasks/<myytava_id>/2/", methods=["GET"])
+def myytava_delete(myytava_id):
+
+    Myytava.query.filter_by(id=myytava_id).delete()
+    db.session().commit()
+
+    return redirect(url_for("myytavat_index"))
+
+
+
+@app.route("/tasks/5/", methods=["POST"])
+@login_required
+def tuoteryhma_create():
     form = TuoteryhmaForm(request.form)
 
     if not form.validate():
-        return render_template("tasks/new.html", form = form)  
+        return render_template("tasks/uusituoteryhma.html", form = form)  
 
     t = Tuoteryhma(form.name.data)
     t.done = form.done.data
@@ -68,12 +94,12 @@ def tasks_create():
     db.session().add(t)
     db.session().commit()
   
-    return redirect(url_for("tasks_index"))
+    return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tasks/", methods=["POST"])
+@app.route("/tasks/6/", methods=["POST"])
 @login_required
-def lisaa_myytava():
+def myytava_create():
     form = MyytavaForm(request.form)
 
     if not form.validate():
