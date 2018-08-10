@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+
+    <tr>
+      <th>Myytävä tuote</th>
+      <th>Muokattu</th>
+      <th>Id</th>
+      <th></th>
+    </tr>
+    {% for myytava in myytavat %}
+    <tr>
+      <td>{{ myytava.name }}</td>
+      <td>{{ myytava.done }}</td>
+      <td>{{ myytava.id }}</td>
+
+	  <td>
+	<form method="POST" action="{{ url_for('myytava_set_done', myytava_id=myytava.id) }}">
+	  <input type="submit" value="Muokkaa myytäviä"/>
+	</form>
+      </td>
+      <td>
+	<form method="GET" action="{{ url_for('myytava_delete', myytava_id=myytävä.id) }}">
+	  <input type="submit" value="Poista myytävä"/>
+	</form>
+      </td>
+
+    </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}

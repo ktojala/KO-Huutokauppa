@@ -13,8 +13,8 @@ class User(db.Model):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
-    huutokauppa = db.relationship("Task", backref='account', lazy=True)
-
+    huutokauppa = db.relationship("Tuoteryhma", backref='account', lazy=True)
+    huutokauppa = db.relationship("Myytava", backref='account', lazy=True)
 
     def __init__(self, name):
         self.name = name
