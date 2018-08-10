@@ -25,8 +25,8 @@ Toimintoja:
 HUOM: Myytava-taulun tuotteita ei vielä ole linkitetty tuoteryhmiin.
 
 ## Kirjautuminen:
-Käyttäjätunnus: testi
-Salasana:       kesti
+- Käyttäjätunnus: testi
+- Salasana:       kesti
 
 ## Linkit:
 

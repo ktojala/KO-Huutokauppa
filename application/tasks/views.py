@@ -29,7 +29,7 @@ def myytava_form():
     return render_template("tasks/uusimyytava.html", form = MyytavaForm())
 
 
-@app.route("/tasks/<task_id>/", methods=["POST"])
+@app.route("/tasks/<task_id>/1/", methods=["POST"])
 @login_required
 def tuoteryhma_set_done(task_id):
 
@@ -44,7 +44,7 @@ def tuoteryhma_set_done(task_id):
     return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tasks/<task_id>/", methods=["GET"])
+@app.route("/tasks/<task_id>/2/", methods=["GET"])
 def tuoteryhma_delete(task_id):
 
     Tuoteryhma.query.filter_by(id=task_id).delete()
@@ -54,7 +54,7 @@ def tuoteryhma_delete(task_id):
 
 
 
-@app.route("/tasks/<myytava_id>/1/", methods=["POST"])
+@app.route("/tasks/<myytava_id>/3/", methods=["POST"])
 @login_required
 def myytava_set_done(myytava_id):
 
@@ -69,7 +69,7 @@ def myytava_set_done(myytava_id):
     return redirect(url_for("myytavat_index"))
 
 
-@app.route("/tasks/<myytava_id>/2/", methods=["GET"])
+@app.route("/tasks/<myytava_id>/4/", methods=["GET"])
 def myytava_delete(myytava_id):
 
     Myytava.query.filter_by(id=myytava_id).delete()
