@@ -3,16 +3,18 @@ from wtforms import BooleanField, StringField, IntegerField, validators
 
 class TuoteryhmaForm(FlaskForm):
     name = StringField("Tuoteryhmä:", [validators.Length(min=3)])
-    done = BooleanField("Dani") 
+    done = BooleanField("Muuta") 
 
     class Meta:
         csrf = False
 
 class MyytavaForm(FlaskForm):
     name = StringField("Nimike myytävälle:", [validators.Length(min=3)])
-#    lisätietoa = StringField("Tuoteseloste:", [validators.Length(min=1, max=144)])
-#    hinta = IntegerField("Tarjous:", [validators.NumberRange(min=1)])
-    done = BooleanField("Dani") 
+#    tuotetietoa = StringField("Tuotetietoa:", [validators.Length(max=144)])
+    aloitushinta = IntegerField("Aloitushinta (tasaluku euroina)", [validators.NumberRange(min=1)])
+
+#    done = BooleanField("Dani") 
 
     class Meta:
         csrf = False
+

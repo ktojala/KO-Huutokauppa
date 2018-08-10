@@ -4,23 +4,29 @@
 {% block body %}
   <table>
 
+
+
     <tr>
-      <th>Myytävä tuote</th>
-      <th>Muokattu</th>
       <th>Id</th>
+      <th>Myytävä tuote</th>
+      <th>Aloitushinta (eur)</th>
+
       <th></th>
     </tr>
     {% for myytava in myytavat %}
     <tr>
-      <td>{{ myytava.name }}</td>
-      <td>{{ myytava.done }}</td>
       <td>{{ myytava.id }}</td>
+      <td>{{ myytava.name }}</td>
+      <td>{{ myytava.aloitushinta }}</td>
 
 	  <td>
-	<form method="POST" action="{{ url_for('myytava_set_done', myytava_id=myytava.id) }}">
-	  <input type="submit" value="Muokkaa myytäviä"/>
+	<form method="POST" action="{{ url_for('myytava_nosta_aloitushintaa', myytava_id=myytava.id) }}">
+	  <input type="submit" value="Nosta aloitushintaa"/>
 	</form>
       </td>
+
+
+
       <td>
 	<form method="GET" action="{{ url_for('myytava_delete', myytava_id=myytava.id) }}">
 	  <input type="submit" value="Poista myytävä"/>

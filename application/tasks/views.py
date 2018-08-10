@@ -6,6 +6,7 @@ from application.tasks.models import Tuoteryhma
 from application.tasks.forms import TuoteryhmaForm
 from application.tasks.models import Myytava
 from application.tasks.forms import MyytavaForm
+# from application.tasks.forms import UusialoitushintaForm
 
 @app.route("/tasks/1/", methods=["GET"])
 def tuoteryhmat_index():
@@ -29,7 +30,7 @@ def myytava_form():
     return render_template("tasks/uusimyytava.html", form = MyytavaForm())
 
 
-@app.route("/tasks/<task_id>/1/", methods=["POST"])
+@app.route("/tasks/<task_id>/5/", methods=["POST"])
 @login_required
 def tuoteryhma_set_done(task_id):
 
@@ -44,7 +45,8 @@ def tuoteryhma_set_done(task_id):
     return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tasks/<task_id>/2/", methods=["GET"])
+@app.route("/tasks/<task_id>/6/", methods=["GET"])
+@login_required
 def tuoteryhma_delete(task_id):
 
     Tuoteryhma.query.filter_by(id=task_id).delete()
@@ -54,22 +56,20 @@ def tuoteryhma_delete(task_id):
 
 
 
-@app.route("/tasks/<myytava_id>/3/", methods=["POST"])
+@app.route("/tasks/<myytava_id>/7/", methods=["POST"])
 @login_required
-def myytava_set_done(myytava_id):
+def myytava_nosta_aloitushintaa(myytava_id):
 
     t = Myytava.query.get(myytava_id)
-    t.done = True
-
-# seuraava rivi ei vielä tarpeen
-#    t1 = Myytava(request.form.get("name"))
-
+    t.aloitushinta+=1
     db.session().commit()
   
     return redirect(url_for("myytavat_index"))
 
 
-@app.route("/tasks/<myytava_id>/4/", methods=["GET"])
+
+@app.route("/tasks/<myytava_id>/8/", methods=["GET"])
+@login_required
 def myytava_delete(myytava_id):
 
     Myytava.query.filter_by(id=myytava_id).delete()
@@ -79,7 +79,7 @@ def myytava_delete(myytava_id):
 
 
 
-@app.route("/tasks/5/", methods=["POST"])
+@app.route("/tasks/9/", methods=["POST"])
 @login_required
 def tuoteryhma_create():
     form = TuoteryhmaForm(request.form)
@@ -97,7 +97,7 @@ def tuoteryhma_create():
     return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tasks/6/", methods=["POST"])
+@app.route("/tasks/10/", methods=["POST"])
 @login_required
 def myytava_create():
     form = MyytavaForm(request.form)
@@ -106,7 +106,7 @@ def myytava_create():
         return render_template("tasks/uusimyytava.html", form = form)  
 
     t = Myytava(form.name.data)
-    t.done = form.done.data
+    t.aloitushinta = form.aloitushinta.data
     t.account_id = current_user.id
 
     db.session().add(t)
