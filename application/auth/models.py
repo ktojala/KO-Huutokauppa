@@ -1,7 +1,8 @@
 from application import db
 
-class User(db.Model):
+class Asiakas(db.Model):
 
+# Ei suomenneta account-sanaa
     __tablename__ = "account"
   
     id = db.Column(db.Integer, primary_key=True)
@@ -13,13 +14,14 @@ class User(db.Model):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
+# Seuraavat 2 riviä, eka sana mahd. muutettava
     huutokauppa = db.relationship("Tuoteryhma", backref='account', lazy=True)
     huutokauppa = db.relationship("Myytava", backref='account', lazy=True)
 
-    def __init__(self, name):
+    def __init__(self, name,username,password):
         self.name = name
-#        self.username = username
-#        self.password = password
+        self.username = username
+        self.password = password
   
     def get_id(self):
         return self.id

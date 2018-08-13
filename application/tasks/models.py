@@ -38,3 +38,5 @@ class Myytava(db.Model):
     def __init__(self, name):
         self.name = name
         self.aloitushinta = 1
+
+

@@ -8,3 +8,11 @@ class LoginForm(FlaskForm):
     class Meta:
         csrf = False
 
+class RegForm(FlaskForm):
+    name = StringField("Nimi", [validators.Length(min=3)])
+    username = StringField("Kayttäjätunnus", [validators.Length(min=3)])
+    password = PasswordField("Salasana (vähintään 5 merkkiä)", [validators.Length(min=5, max=100)])
+  
+    class Meta:
+        csrf = False
+

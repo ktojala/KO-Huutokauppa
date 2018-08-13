@@ -6,6 +6,8 @@ from application.tasks.models import Tuoteryhma
 from application.tasks.forms import TuoteryhmaForm
 from application.tasks.models import Myytava
 from application.tasks.forms import MyytavaForm
+from application.auth.models import Asiakas
+from application.auth.forms import RegForm
 # from application.tasks.forms import UusialoitushintaForm
 
 @app.route("/tasks/1/", methods=["GET"])
@@ -113,3 +115,24 @@ def myytava_create():
     db.session().commit()
   
     return redirect(url_for("myytavat_index"))
+
+
+@app.route("/tasks/11/", methods=["POST"])
+# @app.route("/tasks/11/")
+def auth_reg():
+
+    form = RegForm(request.form)
+    if not form.validate():
+        return render_template("auth/regform.html", form = form)
+    t = User(form.name.data)
+    t.username = form.username.data
+    t.password = form.password.data
+
+    db.session().add(t)
+    db.session().commit()
+
+    return render_template("index.html")
+
+
+
+
