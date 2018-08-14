@@ -1,9 +1,9 @@
 
 from application import db
   
-class Tuoteryhma(db.Model):
+class Myytava(db.Model):
 
-    __tablename__ = "tuoteryhma"
+    __tablename__ = "myytava"
 
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
@@ -11,13 +11,10 @@ class Tuoteryhma(db.Model):
     onupdate=db.func.current_timestamp())
 
     name = db.Column(db.String(144), nullable=False)
-    done = db.Column(db.Boolean, nullable=False)
-
-    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
-                           nullable=False)
+    aloitushinta = db.Column(db.Integer, nullable=False)
+#    tuotetietoa = db.Column(db.String(144), nullable=False)
+    account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
 
     def __init__(self, name):
         self.name = name
-        self.done = False
-
-
+        self.aloitushinta = 1

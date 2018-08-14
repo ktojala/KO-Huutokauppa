@@ -11,10 +11,10 @@ Meklarit valvovat kauppaa ottamalla aika ajoin seurantalistoja, joista pitäisi 
 Vain huutokauppakamarin edustaja voi lisätä huutokaupan sivuille tuotteita ja tuoteryhmiä sekä tarvittaessa muokata ja poistaa näitä, samoin kuin verkossa näkyviä toimintaohjeita.
 
 Toimintoja:
-- Tuotetietojen syöttö ja muokkaus
-- Tuotteen poistaminen ja tarvittaessa siirto toteutuneiden kauppojen luetteloon
+- Tuotetietojen (=myytava) syöttö ja muokkaus
+- Myytävän poistaminen ja tarvittaessa siirto toteutuneiden kauppojen luetteloon
 - Tuoteluokkien muokkaus, lisäys ja poisto
-- Tuotetietojen katselu
+- Myytavan tuotteen tietojen katselu
 - Asiakkaaksi rekisteröityminen, kirjautuminen, oman profiilin muokkaaminen ja rekisteristä irtisanoutuminen
 - Tarjouksen tekeminen
 - Meklarin seurantalistan tuottaminen ja epäkelvon tarjouksen poistaminen
@@ -23,7 +23,6 @@ Toimintoja:
 - Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi ostomäärät ostajien paikkakunnan mukaan
 
 HUOM 1: Myytava-taulun tuotteita ei vielä ole linkitetty tuoteryhmiin.
-HUOM 2: Rekisteröityminen hoituu toistaiseksi vain komentoriviltä.
 
 ## Kirjautuminen:
 - Käyttäjätunnus: testi
