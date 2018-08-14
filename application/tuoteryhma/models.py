@@ -20,4 +20,3 @@ class Tuoteryhma(db.Model):
         self.name = name
         self.done = False
 
-

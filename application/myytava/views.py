@@ -2,12 +2,11 @@ from flask import redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 
 from application import app, db
-from application.tasks.models import Tuoteryhma
-from application.tasks.forms import TuoteryhmaForm
 from application.myytava.models import Myytava
 from application.myytava.forms import MyytavaForm
 from application.auth.models import Asiakas
 from application.auth.forms import RegForm
+
 # from application.tasks.forms import UusialoitushintaForm
 
 
