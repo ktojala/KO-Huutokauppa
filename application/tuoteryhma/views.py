@@ -7,24 +7,25 @@ from application.tuoteryhma.forms import TuoteryhmaForm
 
 from application.auth.models import Asiakas
 from application.auth.forms import RegForm
+
 # from application.tasks.forms import UusialoitushintaForm
 
-@app.route("/tuoteryhma/1/", methods=["GET"])
+@app.route("/tuoteryhma/", methods=["GET"])
 def tuoteryhmat_index():
     return render_template("tuoteryhma/tuoteryhma_list.html", tuoteryhmat = Tuoteryhma.query.all())
 
 
-@app.route("/tuoteryhma/3/")
+@app.route("/tuoteryhma/uusi/")
 @login_required
 def tuoteryhma_form():
     return render_template("tuoteryhma/uusituoteryhma.html", form = TuoteryhmaForm())
 
 
-@app.route("/tuoteryhma/<task_id>/5/", methods=["POST"])
+@app.route("/tuoteryhma/<tuoteryhma_id>/", methods=["POST"])
 @login_required
-def tuoteryhma_set_done(task_id):
+def tuoteryhma_set_done(tuoteryhma_id):
 
-    t = Tuoteryhma.query.get(task_id)
+    t = Tuoteryhma.query.get(tuoteryhma_id)
     t.done = True
 
 # seuraava rivi ei vielä tarpeen
@@ -35,17 +36,17 @@ def tuoteryhma_set_done(task_id):
     return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tuoteryhma/<task_id>/6/", methods=["GET"])
+@app.route("/tuoteryhma/<tuoteryhma_id>/delete/", methods=["GET"])
 @login_required
-def tuoteryhma_delete(task_id):
+def tuoteryhma_delete(tuoteryhma_id):
 
-    Tuoteryhma.query.filter_by(id=task_id).delete()
+    Tuoteryhma.query.filter_by(id=tuoteryhma_id).delete()
     db.session().commit()
 
     return redirect(url_for("tuoteryhmat_index"))
 
 
-@app.route("/tuoteryhma/9/", methods=["POST"])
+@app.route("/tuoteryhma/create/", methods=["POST"])
 @login_required
 def tuoteryhma_create():
     form = TuoteryhmaForm(request.form)

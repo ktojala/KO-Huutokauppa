@@ -10,18 +10,19 @@ from application.auth.forms import RegForm
 # from application.tasks.forms import UusialoitushintaForm
 
 
-@app.route("/tasks/2/", methods=["GET"])
+@app.route("/myytava/", methods=["GET"])
 def myytavat_index():
     return render_template("myytava/myytava_list.html", myytavat = Myytava.query.all())
 
+# tarkista myöhemmin => get lisätietoja toiminto
 
-@app.route("/tasks/4/")
+@app.route("/myytava/uusi/")
 @login_required
 def myytava_form():
     return render_template("myytava/uusimyytava.html", form = MyytavaForm())
 
 
-@app.route("/myytava/<myytava_id>/7/", methods=["POST"])
+@app.route("/myytava/<myytava_id>/", methods=["POST"])
 @login_required
 def myytava_nosta_aloitushintaa(myytava_id):
 
@@ -33,7 +34,7 @@ def myytava_nosta_aloitushintaa(myytava_id):
 
 
 
-@app.route("/tasks/<myytava_id>/8/", methods=["GET"])
+@app.route("/myytava/<myytava_id>/delete/", methods=["GET"])
 @login_required
 def myytava_delete(myytava_id):
 
@@ -45,7 +46,7 @@ def myytava_delete(myytava_id):
 
 
 
-@app.route("/tasks/10/", methods=["POST"])
+@app.route("/myytava/create/", methods=["POST"])
 @login_required
 def myytava_create():
     form = MyytavaForm(request.form)
