@@ -23,8 +23,8 @@ db = SQLAlchemy(app)
 # oman sovelluksen toiminnallisuudet
 from application import views
 
-from application.tasks import models
-from application.tasks import views
+from application.tuoteryhma import models
+from application.tuoteryhma import views
 
 from application.myytava import models
 from application.myytava import views
