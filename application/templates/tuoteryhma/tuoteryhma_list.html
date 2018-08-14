@@ -17,14 +17,15 @@
       <td>{{ tuoteryhma.id }}</td>
 
 	  <td>
-	<form method="POST" action="{{ url_for('tuoteryhma_set_done', tuoteryhma_id=tuoteryhma.id) }}">
-	  <input type="submit" value="Muokkaa tuoteryhmää"/>
-	</form>
+	    <form method="POST" action="{{ url_for('tuoteryhma_open', tuoteryhma_id=tuoteryhma.id) }}">
+	      <input type="submit" value="Avaa tuoteryhmä"/>
+	    </form>
       </td>
+
       <td>
-	<form method="GET" action="{{ url_for('tuoteryhma_delete', tuoteryhma_id=tuoteryhma.id) }}">
-	  <input type="submit" value="Poista tuoteryhmä"/>
-	</form>
+	    <form method="GET" action="{{ url_for('tuoteryhma_delete', tuoteryhma_id=tuoteryhma.id) }}">
+	      <input type="submit" value="Poista tuoteryhmä"/>
+	    </form>
       </td>
 
     </tr>

@@ -23,7 +23,7 @@ def tuoteryhma_form():
 
 @app.route("/tuoteryhma/<tuoteryhma_id>/", methods=["POST"])
 @login_required
-def tuoteryhma_set_done(tuoteryhma_id):
+def tuoteryhma_open(tuoteryhma_id):
 
     t = Tuoteryhma.query.get(tuoteryhma_id)
     t.done = True
@@ -34,6 +34,7 @@ def tuoteryhma_set_done(tuoteryhma_id):
     db.session().commit()
   
     return redirect(url_for("tuoteryhmat_index"))
+#    return redirect(url_for("myytava_create"))
 
 
 @app.route("/tuoteryhma/<tuoteryhma_id>/delete/", methods=["GET"])

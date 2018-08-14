@@ -54,7 +54,7 @@ def myytava_create():
     if not form.validate():
         return render_template("myytava/uusimyytava.html", form = form)  
 
-    t = Myytava(form.name.data)
+    t = Myytava(form.name.data,2)
     t.aloitushinta = form.aloitushinta.data
     t.account_id = current_user.id
 
