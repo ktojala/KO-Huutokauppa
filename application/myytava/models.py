@@ -8,6 +8,7 @@ class Myytava(Base):
 
     name = db.Column(db.String(144), nullable=False)
     aloitushinta = db.Column(db.Integer, nullable=False)
+    tarjoushinta = db.Column(db.Integer, nullable=False)
 #    tuotetietoa = db.Column(db.String(144), nullable=False)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
@@ -16,4 +17,5 @@ class Myytava(Base):
     def __init__(self, name,tuoteryhma):
         self.name = name
         self.aloitushinta = 1
+        self.tarjoushinta = 1
         self.tuoteryhma_id = tuoteryhma

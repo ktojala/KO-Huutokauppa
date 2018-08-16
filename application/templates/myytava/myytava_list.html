@@ -10,6 +10,7 @@
       <th>Id</th>
       <th>Myytävä tuote</th>
       <th>Aloitushinta (eur)</th>
+      <th>Korkein tarjous (eur)</th>
       <th>Tuoteryhmä</th>
 
       <th></th>
@@ -19,11 +20,12 @@
       <td>{{ myytava.id }}</td>
       <td>{{ myytava.name }}</td>
       <td>{{ myytava.aloitushinta }}</td>
+      <td>{{ myytava.tarjoushinta }}</td>
       <td>{{ myytava.tuoteryhma_id }}</td>
 
 	  <td>
-	<form method="POST" action="{{ url_for('myytava_nosta_aloitushintaa', myytava_id=myytava.id) }}">
-	  <input type="submit" value="Nosta aloitushintaa"/>
+	<form method="POST" action="{{ url_for('myytava_nosta_tarjoushintaa', myytava_id=myytava.id) }}">
+	  <input type="submit" value="Korota tarjoushintaa"/>
 	</form>
       </td>
 

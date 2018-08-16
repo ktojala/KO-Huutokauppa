@@ -24,10 +24,10 @@ def myytava_form():
 
 @app.route("/myytava/<myytava_id>/", methods=["POST"])
 @login_required
-def myytava_nosta_aloitushintaa(myytava_id):
+def myytava_nosta_tarjoushintaa(myytava_id):
 
     t = Myytava.query.get(myytava_id)
-    t.aloitushinta+=1
+    t.tarjoushinta+=1
     db.session().commit()
   
     return redirect(url_for("myytavat_index"))
@@ -56,6 +56,7 @@ def myytava_create():
 
     t = Myytava(form.name.data,2)
     t.aloitushinta = form.aloitushinta.data
+    t.tarjoushinta = form.aloitushinta.data
     t.account_id = current_user.id
 
     db.session().add(t)
