@@ -3,7 +3,7 @@
 
 {% block body %}
   <table>
-
+	  <h2>Tuoteryhmät</h2>
     <tr>
       <th>Tuoteryhmä</th>
       <th>Muokattu</th>
@@ -17,8 +17,11 @@
       <td>{{ tuoteryhma.id }}</td>
 
 	  <td>
-	    <form method="POST" action="{{ url_for('tuoteryhma_open', tuoteryhma_id=tuoteryhma.id) }}">
-	      <input type="submit" value="Avaa tuoteryhmä"/>
+
+
+
+	    <form method="POST" action="{{ url_for('myytava_create') }}">
+	      <input type="submit" value="Lisaa myytava"/>
 	    </form>
       </td>
 

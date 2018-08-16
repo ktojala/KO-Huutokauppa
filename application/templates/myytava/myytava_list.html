@@ -3,9 +3,7 @@
 
 {% block body %}
   <table>
-
-
-
+	  <h2>Myytävät tuotteet</h2>
     <tr>
       <th>Id</th>
       <th>Myytävä tuote</th>
@@ -25,11 +23,9 @@
 
 	  <td>
 	<form method="POST" action="{{ url_for('myytava_nosta_tarjoushintaa', myytava_id=myytava.id) }}">
-	  <input type="submit" value="Korota tarjoushintaa"/>
+	  <input type="submit" value="Korota tarjousta"/>
 	</form>
       </td>
-
-
 
       <td>
 	<form method="GET" action="{{ url_for('myytava_delete', myytava_id=myytava.id) }}">

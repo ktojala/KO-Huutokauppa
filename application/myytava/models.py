@@ -19,3 +19,6 @@ class Myytava(Base):
         self.aloitushinta = 1
         self.tarjoushinta = 1
         self.tuoteryhma_id = tuoteryhma
+
+
+

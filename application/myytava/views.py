@@ -33,7 +33,6 @@ def myytava_nosta_tarjoushintaa(myytava_id):
     return redirect(url_for("myytavat_index"))
 
 
-
 @app.route("/myytava/<myytava_id>/delete/", methods=["GET"])
 @login_required
 def myytava_delete(myytava_id):
@@ -44,8 +43,6 @@ def myytava_delete(myytava_id):
     return redirect(url_for("myytavat_index"))
 
 
-
-
 @app.route("/myytava/create/", methods=["POST"])
 @login_required
 def myytava_create():
@@ -54,10 +51,11 @@ def myytava_create():
     if not form.validate():
         return render_template("myytava/uusimyytava.html", form = form)  
 
-    t = Myytava(form.name.data,2)
+    t = Myytava(form.name.data,1)
     t.aloitushinta = form.aloitushinta.data
     t.tarjoushinta = form.aloitushinta.data
     t.account_id = current_user.id
+    t.tuoteryhma_id = 2
 
     db.session().add(t)
     db.session().commit()
@@ -65,4 +63,21 @@ def myytava_create():
     return redirect(url_for("myytavat_index"))
 
 
+#   <li><a href="{{ url_for('myytava_form') }}">Lisää uusi myytävä tuote</a></li>
+
+
+# @app.route("/tuoteryhma/<tuoteryhma_id>/", methods=["POST"])
+# @login_required
+# def tuoteryhma_open(tuoteryhma_id):
+#
+#    t = Tuoteryhma.query.get(tuoteryhma_id)
+#    t.done = True
+
+# seuraava rivi ei vielä tarpeen
+#    t1 = Tuoteryhma(request.form.get("name"))
+
+#    db.session().commit()
+  
+#    return redirect(url_for("tuoteryhmat_index"))
+#    return redirect(url_for("myytava_create"))
 

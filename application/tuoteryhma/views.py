@@ -2,6 +2,10 @@ from flask import redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 
 from application import app, db
+
+# Uusi lisä
+from application.myytava.models import Myytava
+
 from application.tuoteryhma.models import Tuoteryhma
 from application.tuoteryhma.forms import TuoteryhmaForm
 
