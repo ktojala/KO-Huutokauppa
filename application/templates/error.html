@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>On tapahtunut virhe</h2>
+
+{{ error }}
+<a href="{{ url_for('index') }}">Etusivulle</a>
+
+{% endblock %}

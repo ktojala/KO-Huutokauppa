@@ -73,6 +73,3 @@ def tuoteryhma_create():
 
 
 
-
-
-

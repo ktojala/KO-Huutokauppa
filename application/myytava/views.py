@@ -2,6 +2,9 @@ from flask import redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 
 from application import app, db
+
+from application.tuoteryhma.models import Tuoteryhma
+
 from application.myytava.models import Myytava
 from application.myytava.forms import MyytavaForm
 from application.auth.models import Asiakas
@@ -43,24 +46,29 @@ def myytava_delete(myytava_id):
     return redirect(url_for("myytavat_index"))
 
 
-@app.route("/myytava/create/", methods=["POST"])
+@app.route("/myytava/<tuoteryhma_id>/create/", methods=["POST"])
 @login_required
-def myytava_create():
+def myytava_create(tuoteryhma_id):
     form = MyytavaForm(request.form)
+    tuoteryhma = Tuoteryhma.query.get(tuoteryhma_id)
 
     if not form.validate():
-        return render_template("myytava/uusimyytava.html", form = form)  
+        return render_template("myytava/uusimyytava.html", form = form, tuoteryhma = tuoteryhma)  
 
     t = Myytava(form.name.data,1)
     t.aloitushinta = form.aloitushinta.data
     t.tarjoushinta = form.aloitushinta.data
     t.account_id = current_user.id
-    t.tuoteryhma_id = 2
+    t.tuoteryhma_id = tuoteryhma_id
 
     db.session().add(t)
     db.session().commit()
   
     return redirect(url_for("myytavat_index"))
+
+
+
+
 
 
 #   <li><a href="{{ url_for('myytava_form') }}">Lisää uusi myytävä tuote</a></li>
@@ -80,4 +88,3 @@ def myytava_create():
   
 #    return redirect(url_for("tuoteryhmat_index"))
 #    return redirect(url_for("myytava_create"))
-

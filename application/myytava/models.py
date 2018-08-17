@@ -1,4 +1,3 @@
-
 from application import db
 from application.models import Base
   
@@ -19,6 +18,3 @@ class Myytava(Base):
         self.aloitushinta = 1
         self.tarjoushinta = 1
         self.tuoteryhma_id = tuoteryhma
-
-
-
