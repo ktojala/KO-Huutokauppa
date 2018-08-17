@@ -60,7 +60,7 @@ def tuoteryhma_create():
         return render_template("tuoteryhma/uusituoteryhma.html", form = form)  
 
     t = Tuoteryhma(form.name.data)
-    t.done = form.done.data
+#    t.done = form.done.data
     t.account_id = current_user.id
 
     db.session().add(t)
