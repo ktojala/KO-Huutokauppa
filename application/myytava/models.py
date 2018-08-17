@@ -12,7 +12,7 @@ class Myytava(Base):
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     tuoteryhma_id = db.Column(db.Integer, db.ForeignKey('tuoteryhma.id'), nullable=False)
-    tuoteryhmatxt = db.Column(db.String(40), db.ForeignKey('tuoteryhma.name'), nullable=False)
+    tuoteryhmatxt = db.Column(db.String(40), nullable=False)
 
     def __init__(self, name,tuoteryhma,tuoteryhmatxt):
         self.name = name
