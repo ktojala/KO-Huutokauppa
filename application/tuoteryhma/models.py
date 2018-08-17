@@ -8,7 +8,7 @@ class Tuoteryhma(Base):
 
     __tablename__ = "tuoteryhma"
 
-    name = db.Column(db.String(144), nullable=False)
+    name = db.Column(db.String(144), unique=True, nullable=False)
 #    done = db.Column(db.Boolean, nullable=False)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
