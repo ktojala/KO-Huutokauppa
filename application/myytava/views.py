@@ -55,11 +55,12 @@ def myytava_create(tuoteryhma_id):
     if not form.validate():
         return render_template("myytava/uusimyytava.html", form = form, tuoteryhma = tuoteryhma)  
 
-    t = Myytava(form.name.data,1)
+    t = Myytava(form.name.data,1,tuoteryhma.name)
     t.aloitushinta = form.aloitushinta.data
     t.tarjoushinta = form.aloitushinta.data
     t.account_id = current_user.id
     t.tuoteryhma_id = tuoteryhma_id
+
 
     db.session().add(t)
     db.session().commit()

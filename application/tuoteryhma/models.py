@@ -1,6 +1,8 @@
 
 from application import db
 from application.models import Base
+
+from sqlalchemy.sql import text
   
 class Tuoteryhma(Base):
 
@@ -25,11 +27,9 @@ class Tuoteryhma(Base):
 #            response.append
         
     @staticmethod
-    def anna_tuoteryhma_nimi(self, annettu_id):
-        smtf = text("SELECT tuoteryhma.name FROM tuoteryhma WHERE (tuoteryhma.id = annettu_id)");
-        res = db.engine.execute(stmf)
-        response = []
-        response.append(res)
-        return response
+    def montako_tuotetta_ryhmassa(tr):
+#        stmt = text("SELECT COUNT(name) FROM myytava WHERE :id=tr.id")
+        stmt = text("SELECT COUNT(id) FROM myytava ")
+        res = db.engine.execute(stmt).scalar()
+        return res
 
-#      <td>{{ Tuoteryhma.anna_tuoteryhma_nimi(myytava.tuoteryhma_id) }}</td>
