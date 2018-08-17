@@ -25,6 +25,7 @@ Toimintoja:
 HUOM: 
 - Tuoteryhmä ei vielä näytä oikein ryhmän tuotteiden lukumäärää
 - Tarjousten teko siirretään lähiaikoina yksittäisen tuotteen tietojen tarkastelusivulle (myyntiesite).
+- MONIMUTKAISTA YHTEENVETOKYSELYÄ ei ihan sellaisenaan ole, mutta jossakin mielessä vastaava toiminnallisuus on se, miten Tuoteryhmän listauksesta voidaan klikata "Lisää myytävä", jolloin luodaan uusi myytävä tuote joloin myytava-tauluun viedään automaattisesti se tuoteryhmä jonka kohdalla klikkaus tapahtui.
 
 ## Kirjautuminen:
 - Käyttäjätunnus: testi
