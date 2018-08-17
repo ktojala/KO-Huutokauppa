@@ -12,8 +12,8 @@ class Asiakas(Base):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
-    tuoteryhma = db.relationship("Tuoteryhma", backref='account', lazy=True)
-    myytava = db.relationship("Myytava", backref='account', lazy=True)
+    huutokauppa = db.relationship("Tuoteryhma", backref='account', lazy=True)
+    huutokauppa = db.relationship("Myytava", backref='account', lazy=True)
 
     def __init__(self, name,email,username,password):
         self.name = name
