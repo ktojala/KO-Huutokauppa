@@ -61,19 +61,29 @@ def myytava_create(tuoteryhma_id):
     t.account_id = current_user.id
     t.tuoteryhma_id = tuoteryhma_id
 
-
     db.session().add(t)
     db.session().commit()
   
     return redirect(url_for("myytavat_index"))
 
 
+@app.route("/myytava/yhteenveto/")
+@login_required
+def myytava_yhteenveto():
+    
+#    return Myytava.loyda_kaikki()
+    return redirect(url_for("myytavat_index"))
 
+#    return render_template("myytava/myytava_yhteenveto.html")
 
+@app.route("/myytava/<myytava_id>/laske/")
+@login_required
+def tuoteryhma_laske(myytava_id):
+    
+    return myytava_id
 
 
 #   <li><a href="{{ url_for('myytava_form') }}">Lisää uusi myytävä tuote</a></li>
-
 
 # @app.route("/tuoteryhma/<tuoteryhma_id>/", methods=["POST"])
 # @login_required

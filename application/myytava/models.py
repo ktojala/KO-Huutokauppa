@@ -12,7 +12,7 @@ class Myytava(Base):
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     tuoteryhma_id = db.Column(db.Integer, db.ForeignKey('tuoteryhma.id'), nullable=False)
-    tuoteryhmatxt = db.Column(db.String(40), db.ForeignKey('tuoteryhma.name'), unique=True, nullable=False)
+    tuoteryhmatxt = db.Column(db.String(40), db.ForeignKey('tuoteryhma.name'), nullable=False)
 
     def __init__(self, name,tuoteryhma,tuoteryhmatxt):
         self.name = name
@@ -21,4 +21,9 @@ class Myytava(Base):
         self.tuoteryhma_id = tuoteryhma
         self.tuoteryhmatxt = tuoteryhmatxt
 
+    @staticmethod
+    def loyda_kaikki():
+        stmt = ("SELECT myytava.name FROM myytava;")
+        res = db.engine.execute(stmt)
 
+        return res

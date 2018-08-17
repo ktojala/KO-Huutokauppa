@@ -1,0 +1,31 @@
+
+
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+	  <h2>Tuoteryhmätietoa</h2>
+    <tr>
+      <th>Tuoteryhmä</th>
+      <th>Tuotteita (kpl)</th>
+
+      <th></th>
+    </tr>
+    {% for myytava in myytavat %}
+    <tr>
+
+      <td>{{ myytava.name }}</td>
+      <td>{{ myytava.id }}</td>
+	  <td>
+
+	    <a href="{{ url_for('myytava_laske', tuoteryhma_id=tuoteryhma.id) }}"></a>
+
+      </td>
+
+
+
+    </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}
