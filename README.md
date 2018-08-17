@@ -23,7 +23,7 @@ Toimintoja:
 - Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi ostomäärät ostajien paikkakunnan mukaan
 
 HUOM: 
-- Myytava-taulun tuotteita ei vielä ole täydellisesti linkitetty tuoteryhmiin.
+- Tuoteryhmä ei vielä näytä oikein ryhmän tuotteiden lukumäärää
 - Tarjousten teko siirretään lähiaikoina yksittäisen tuotteen tietojen tarkastelusivulle (myyntiesite).
 
 ## Kirjautuminen:
