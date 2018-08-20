@@ -56,6 +56,7 @@ def myytava_create(tuoteryhma_id):
         return render_template("myytava/uusimyytava.html", form = form, tuoteryhma = tuoteryhma)  
 
     t = Myytava(form.name.data,1,tuoteryhma.name)
+    t.tuotetietoa = form.tuotetietoa.data
     t.aloitushinta = form.aloitushinta.data
     t.tarjoushinta = form.aloitushinta.data
     t.account_id = current_user.id
