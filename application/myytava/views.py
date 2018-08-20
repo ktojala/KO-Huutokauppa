@@ -67,6 +67,16 @@ def myytava_create(tuoteryhma_id):
     return redirect(url_for("myytavat_index"))
 
 
+
+@app.route("/myytava/<myytava_id>/tietoa/", methods=["POST"])
+
+def myytava_tietoa(myytava_id):
+
+
+
+    return redirect(url_for("myytavat_index"))
+
+
 @app.route("/myytava/yhteenveto/")
 @login_required
 def myytava_yhteenveto():
