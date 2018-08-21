@@ -19,8 +19,9 @@ def tarjous_create(myytava_id):
     if form.validate():
         if form.tarjoussumma.data > t.tarjoushinta:
             t.tarjoushinta = form.tarjoussumma.data
+            db.session().commit()
+            return render_template("tarjous/tarjousvahvistus.html", myytava = t)
         else:
             return render_template("tarjous/tarjous_error.html", myytava = t)
-    db.session().commit()
 
     return render_template("myytava/myytavan_tiedot.html", myytava = t)

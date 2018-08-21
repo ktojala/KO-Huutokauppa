@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<h2>Tarjousvahvistus</h2>
+<h2>Tarjouksesi on otettu vastaan.</h2>
 
-{{ error }}
-<a href="{{ url_for('index') }}">Etusivulle</a>
+      <td colspan="1">
+        <form method="POST" action="{{ url_for('myytava_tietoa', myytava_id=myytava.id) }}">
+	      <input type="submit" value="OK"/>
+    	</form>
+	  </td>
+
 
 {% endblock %}
