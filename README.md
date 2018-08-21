@@ -23,8 +23,9 @@ Toimintoja:
 - Kamarin edustaja voi tuottaa tietokannasta myyntitilaston, esimerkiksi ostomäärät ostajien paikkakunnan mukaan
 
 HUOM: 
-- Tarjousten teko tuotteen tietojen tarkastelusivulla tapahtuu pian uudesta tarjouksentekonäkymästä.
-- MONIMUTKAISTA YHTEENVETOKYSELYÄ ei ihan sellaisenaan ole, mutta jossakin mielessä vastaava toiminnallisuus on se, miten Tuoteryhmän listauksesta voidaan klikata "Lisää myytävä", jolloin luodaan uusi myytävä tuote joloin myytava-tauluun viedään automaattisesti se tuoteryhmä jonka kohdalla klikkaus tapahtui.
+- Tarjousten teko toimii nyt uudesta tarjouksentekonäkymästä.
+- MONIMUTKAISTA YHTEENVETOKYSELYÄ ei ihan sellaisenaan ole, mutta jossakin mielessä vastaavaa toiminnallisuutta löytyy, miten Tuoteryhmän listauksesta voidaan klikata "Lisää myytävä", jolloin luodaan uusi myytävä tuote jolloin myytava-tauluun viedään automaattisesti se tuoteryhmä jonka kohdalla klikkaus tapahtui.
+Myytävän tuotteen näkymässä näkyy tuoteryhmän nimi, joka haetaan eri taulusta.
 
 ## Kirjautuminen:
 - Käyttäjätunnus: testi
