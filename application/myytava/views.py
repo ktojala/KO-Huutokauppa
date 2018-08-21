@@ -17,23 +17,13 @@ from application.auth.forms import RegForm
 def myytavat_index():
     return render_template("myytava/myytava_list.html", myytavat = Myytava.query.all())
 
+
 # tarkista myöhemmin => get lisätietoja toiminto
 
 @app.route("/myytava/uusi/")
 @login_required
 def myytava_form():
     return render_template("myytava/uusimyytava.html", form = MyytavaForm())
-
-
-@app.route("/myytava/<myytava_id>/", methods=["POST"])
-@login_required
-def myytava_nosta_tarjoushintaa(myytava_id):
-
-    t = Myytava.query.get(myytava_id)
-    t.tarjoushinta+=1
-    db.session().commit()
-  
-    return redirect(url_for("myytavat_index"))
 
 
 @app.route("/myytava/<myytava_id>/delete/", methods=["GET"])
@@ -69,13 +59,27 @@ def myytava_create(tuoteryhma_id):
 
 
 
+@app.route("/myytava/<myytava_id>/", methods=["POST"])
+@login_required
+def myytava_nosta_tarjoushintaa(myytava_id):
+
+    t = Myytava.query.get(myytava_id)
+    t.tarjoushinta+=1
+    db.session().commit()
+
+    return render_template("myytava/myytavan_tiedot.html", myytava = t)
+
+
 @app.route("/myytava/<myytava_id>/tietoa/", methods=["POST"])
 
 def myytava_tietoa(myytava_id):
 
+    myytava = Myytava.query.get(myytava_id)
+
+#    return redirect(url_for("myytavat_index"), myytava = myytava)
+    return render_template("myytava/myytavan_tiedot.html", myytava = myytava)
 
 
-    return redirect(url_for("myytavat_index"))
 
 
 @app.route("/myytava/yhteenveto/")
