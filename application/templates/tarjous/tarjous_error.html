@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Tarjous liian alhainen, tarkista lähtöhinta</h2>
+
+      <td colspan="1">
+        <form method="GET" action="{{ url_for('tarjous_alhainen') }}">
+	      <input type="submit" value="Paluu"/>
+    	</form>
+	  </td>
+
+{{ error }}
+<a href="{{ url_for('index') }}">Etusivulle</a>
+
+{% endblock %}
