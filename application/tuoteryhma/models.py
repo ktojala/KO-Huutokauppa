@@ -10,7 +10,6 @@ class Tuoteryhma(Base):
 
     name = db.Column(db.String(144), unique=True, nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
-
     myytavat = db.relationship("Myytava", backref="tuoteryhma", lazy=True)
 
     def __init__(self, name):

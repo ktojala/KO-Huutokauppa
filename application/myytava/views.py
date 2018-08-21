@@ -18,9 +18,8 @@ def myytavat_index():
     return render_template("myytava/myytava_list.html", myytavat = Myytava.query.all())
 
 
-
 @app.route("/myytava/<tuoteryhma_id>/open/", methods=["POST"])
-def tuoteryhma_open2(tuoteryhma_id):
+def tuoteryhma_open(tuoteryhma_id):
     return render_template("myytava/myytava_list.html", myytavat = Myytava.query.filter_by(tuoteryhma_id=tuoteryhma_id))
 
 
@@ -60,17 +59,6 @@ def myytava_create(tuoteryhma_id):
     db.session().commit()
   
     return redirect(url_for("myytavat_index"))
-
-
-@app.route("/myytava/<myytava_id>/", methods=["POST"])
-@login_required
-def myytava_nosta_tarjoushintaa(myytava_id):
-
-    t = Myytava.query.get(myytava_id)
-    t.tarjoushinta+=1
-    db.session().commit()
-
-    return render_template("myytava/myytavan_tiedot.html", myytava = t)
 
 
 @app.route("/myytava/<myytava_id>/tietoa/", methods=["POST"])

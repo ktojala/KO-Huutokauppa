@@ -22,6 +22,7 @@ class Myytava(Base):
         self.tuoteryhma_id = tuoteryhma
         self.tuoteryhmatxt = tuoteryhmatxt
 
+
     @staticmethod
     def loyda_kaikki():
         stmt = ("SELECT myytava.name FROM myytava;")
@@ -29,11 +30,9 @@ class Myytava(Base):
 
         return res
 
-
         
     @staticmethod
     def montako_tuotetta_ryhmassa3(tr):
         stmt = text("SELECT COUNT(*) FROM myytava WHERE tuoteryhma_id=tr")
-#        stmt = text("SELECT COUNT(*) FROM myytava WHERE tuoteryhma_id=5")
         res = db.engine.execute(stmt).scalar()
         return res

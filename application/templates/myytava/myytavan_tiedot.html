@@ -26,9 +26,10 @@
       <td></td>
     <tr>
 
+
 	  <td>
-	    <form method="POST" action="{{ url_for('myytava_nosta_tarjoushintaa', myytava_id=myytava.id) }}">
-    	  <input type="submit" value="Korota tarjousta"/>
+	    <form method="POST" action="{{ url_for('tarjous_create', myytava_id=myytava.id) }}">
+    	  <input type="submit" value="Tee tarjous"/>
     	</form>
       </td>
 

@@ -32,6 +32,8 @@ from application.myytava import views
 from application.auth import models
 from application.auth import views
 
+from application.tarjous import models
+from application.tarjous import views
 
 # kirjautuminen
 from application.auth.models import Asiakas

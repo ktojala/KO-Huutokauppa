@@ -1,0 +1,35 @@
+  {% extends "layout.html" %}
+
+  {% block body %}
+  <form method="POST" action="{{ url_for("tarjous_create", myytava_id=myytava.id) }}">
+
+    <table>
+
+
+	<tr>
+  	  <td>
+	    {{ form.tarjoussumma.label }}
+	  </td>
+	  <td>
+	    {{ form.tarjoussumma }}
+	  </td>
+
+        <td>
+	      <ul>
+	       {% for error in form.tarjoussumma.errors %}
+	         <li>{{ error }}</li>
+	           {% endfor %}
+	      </ul>
+	    </td>
+    </tr>
+
+
+	<tr>
+      <td colspan="1">
+	    <input type="submit" value="Lähetä tarjous"/>
+	  </td>
+    </tr>
+
+  </form>
+{% endblock %}
+
