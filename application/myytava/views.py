@@ -18,7 +18,11 @@ def myytavat_index():
     return render_template("myytava/myytava_list.html", myytavat = Myytava.query.all())
 
 
-# tarkista myöhemmin => get lisätietoja toiminto
+
+@app.route("/myytava/<tuoteryhma_id>/open/", methods=["POST"])
+def tuoteryhma_open2(tuoteryhma_id):
+    return render_template("myytava/myytava_list.html", myytavat = Myytava.query.filter_by(tuoteryhma_id=tuoteryhma_id))
+
 
 @app.route("/myytava/uusi/")
 @login_required
@@ -58,7 +62,6 @@ def myytava_create(tuoteryhma_id):
     return redirect(url_for("myytavat_index"))
 
 
-
 @app.route("/myytava/<myytava_id>/", methods=["POST"])
 @login_required
 def myytava_nosta_tarjoushintaa(myytava_id):
@@ -80,37 +83,14 @@ def myytava_tietoa(myytava_id):
     return render_template("myytava/myytavan_tiedot.html", myytava = myytava)
 
 
-
-
 @app.route("/myytava/yhteenveto/")
 @login_required
 def myytava_yhteenveto():
     
-#    return Myytava.loyda_kaikki()
     return redirect(url_for("myytavat_index"))
 
-#    return render_template("myytava/myytava_yhteenveto.html")
-
-@app.route("/myytava/<myytava_id>/laske/")
-@login_required
-def tuoteryhma_laske(myytava_id):
-    
-    return myytava_id
 
 
-#   <li><a href="{{ url_for('myytava_form') }}">Lisää uusi myytävä tuote</a></li>
 
-# @app.route("/tuoteryhma/<tuoteryhma_id>/", methods=["POST"])
-# @login_required
-# def tuoteryhma_open(tuoteryhma_id):
-#
-#    t = Tuoteryhma.query.get(tuoteryhma_id)
-#    t.done = True
 
-# seuraava rivi ei vielä tarpeen
-#    t1 = Tuoteryhma(request.form.get("name"))
 
-#    db.session().commit()
-  
-#    return redirect(url_for("tuoteryhmat_index"))
-#    return redirect(url_for("myytava_create"))
