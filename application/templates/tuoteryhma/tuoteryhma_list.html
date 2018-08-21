@@ -16,7 +16,7 @@
     <tr>
       <td>{{ tuoteryhma.id }}</td>
       <td>{{ tuoteryhma.name }}</td>
-      <td>{{ tuoteryhma.id }}</td>
+      <td>{{ tuoteryhma.montako_tuotetta_ryhmassa(tuoteryhma) }}</td>
 
 	  <td>
 	    <form method="POST" action="{{ url_for('myytava_create', tuoteryhma_id=tuoteryhma.id) }}">

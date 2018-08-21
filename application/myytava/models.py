@@ -14,6 +14,7 @@ class Myytava(Base):
     tuoteryhma_id = db.Column(db.Integer, db.ForeignKey('tuoteryhma.id'), nullable=False)
     tuoteryhmatxt = db.Column(db.String(40), nullable=False)
 
+
     def __init__(self, name,tuoteryhma,tuoteryhmatxt):
         self.name = name
         self.aloitushinta = 1
@@ -26,4 +27,13 @@ class Myytava(Base):
         stmt = ("SELECT myytava.name FROM myytava;")
         res = db.engine.execute(stmt)
 
+        return res
+
+
+        
+    @staticmethod
+    def montako_tuotetta_ryhmassa3(tr):
+        stmt = text("SELECT COUNT(*) FROM myytava WHERE tuoteryhma_id=tr")
+#        stmt = text("SELECT COUNT(*) FROM myytava WHERE tuoteryhma_id=5")
+        res = db.engine.execute(stmt).scalar()
         return res
