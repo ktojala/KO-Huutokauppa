@@ -1,0 +1,28 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+	  <h2>Tarjoukset</h2>
+    <tr>
+      <th>Id</th>
+      <th>Asiakas</th>
+      <th>Myytävä</th>
+      <th>Tarjous (eur)</th>
+
+
+      <th></th>
+    </tr>
+    {% for tarjous in tarjoukset %}
+    <tr>
+      <td>{{ tarjous.id }}</td>
+      <td>{{ tarjous.account_id }}</td>
+      <td>{{ tarjous.myytava_id }}</td>
+      <td>{{ tarjous.tarjoussumma }}</td>
+
+
+    </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}

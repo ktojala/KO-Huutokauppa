@@ -9,6 +9,11 @@ from application.tarjous.forms import TarjousForm
 from application.auth.models import Asiakas
 
 
+@app.route("/tarjous/", methods=["GET"])
+def tarjous_index():
+    return render_template("tarjous/tarjous_list.html", tarjoukset = Tarjous.query.all())
+
+
 @app.route("/tarjous/<myytava_id>/", methods=["POST"])
 @login_required
 def tarjous_create(myytava_id):

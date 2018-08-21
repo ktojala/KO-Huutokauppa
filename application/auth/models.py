@@ -32,3 +32,6 @@ class Asiakas(Base):
 
     def is_authenticated(self):
         return True
+
+    def get_name(self,id):
+        return self.name
