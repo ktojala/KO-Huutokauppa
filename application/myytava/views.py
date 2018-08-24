@@ -68,19 +68,10 @@ def myytava_tietoa(myytava_id):
     return render_template("myytava/myytavan_tiedot.html", myytava = myytava)
 
 
-
 @app.route("/myytava/yhteenveto/")
 @login_required()
 def myytava_yhteenveto():
 
-    lista = []
-    tars = Myytava.query.all()
-    for tar in tars:
-        if tar.tarjoushinta > 10:
-            lista.append(tar)    
-
-    return render_template("myytava/myytava_yhteenveto.html", myytava = lista)
-#    return redirect(url_for("myytavat_index"))
-
+    return render_template("myytava/myytava_yhteenveto.html", tars= Myytava.query.filter(Myytava.aloitushinta==Myytava.tarjoushinta))
 
 
