@@ -1,16 +1,13 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 
 from application.tuoteryhma.models import Tuoteryhma
-
 from application.myytava.models import Myytava
 from application.myytava.forms import MyytavaForm
 from application.auth.models import Asiakas
 from application.auth.forms import RegForm
-
-# from application.tasks.forms import UusialoitushintaForm
 
 
 @app.route("/myytava/", methods=["GET"])
@@ -24,13 +21,13 @@ def tuoteryhma_open(tuoteryhma_id):
 
 
 @app.route("/myytava/uusi/")
-@login_required
+@login_required()
 def myytava_form():
     return render_template("myytava/uusimyytava.html", form = MyytavaForm())
 
 
 @app.route("/myytava/<myytava_id>/delete/", methods=["GET"])
-@login_required
+@login_required()
 def myytava_delete(myytava_id):
 
     Myytava.query.filter_by(id=myytava_id).delete()
@@ -40,7 +37,7 @@ def myytava_delete(myytava_id):
 
 
 @app.route("/myytava/<tuoteryhma_id>/create/", methods=["POST"])
-@login_required
+@login_required()
 def myytava_create(tuoteryhma_id):
     form = MyytavaForm(request.form)
     tuoteryhma = Tuoteryhma.query.get(tuoteryhma_id)
@@ -71,14 +68,19 @@ def myytava_tietoa(myytava_id):
     return render_template("myytava/myytavan_tiedot.html", myytava = myytava)
 
 
+
 @app.route("/myytava/yhteenveto/")
-@login_required
+@login_required()
 def myytava_yhteenveto():
-    
-    return redirect(url_for("myytavat_index"))
 
+    lista = []
+    tars = Myytava.query.all()
+    for tar in tars:
+        if tar.tarjoushinta > 10:
+            lista.append(tar)    
 
-
+    return render_template("myytava/myytava_yhteenveto.html", myytava = lista)
+#    return redirect(url_for("myytavat_index"))
 
 
 

@@ -42,3 +42,4 @@ class Myytava(Base):
     def anna_tuotenimi(syote):
         res = db.engine.execute("SELECT myytava.name FROM myytava WHERE myytava.id=syote.id").scalar()
         return res
+

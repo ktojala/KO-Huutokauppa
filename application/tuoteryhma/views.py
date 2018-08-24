@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 
 # Uusi lisä
 from application.myytava.models import Myytava
@@ -19,7 +19,7 @@ def tuoteryhmat_index():
 
 
 @app.route("/tuoteryhma/uusi/")
-@login_required
+@login_required()
 def tuoteryhma_form():
     return render_template("tuoteryhma/uusituoteryhma.html", form = TuoteryhmaForm())
 
@@ -28,9 +28,8 @@ def tuoteryhma_form():
     return redirect(url_for("tuoteryhmat_index"))
 
 
-
 @app.route("/tuoteryhma/<tuoteryhma_id>/delete/", methods=["GET"])
-@login_required
+@login_required()
 def tuoteryhma_delete(tuoteryhma_id):
 
     Tuoteryhma.query.filter_by(id=tuoteryhma_id).delete()
@@ -40,7 +39,7 @@ def tuoteryhma_delete(tuoteryhma_id):
 
 
 @app.route("/tuoteryhma/create/", methods=["POST"])
-@login_required
+@login_required()
 def tuoteryhma_create():
     form = TuoteryhmaForm(request.form)
 
@@ -48,7 +47,6 @@ def tuoteryhma_create():
         return render_template("tuoteryhma/uusituoteryhma.html", form = form)  
 
     t = Tuoteryhma(form.name.data)
-#    t.done = form.done.data
     t.account_id = current_user.id
 
     db.session().add(t)

@@ -5,6 +5,7 @@ from application import app, db
 from application.auth.models import Asiakas
 from application.auth.forms import LoginForm, RegForm
 
+
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
     if request.method == "GET":
@@ -23,10 +24,12 @@ def auth_login():
     login_user(asiakas)
     return redirect(url_for("index"))
 
+
 @app.route("/auth/logout")
 def auth_logout():
     logout_user()
     return redirect(url_for("index"))
+
 
 @app.route("/auth/reg", methods = ["GET", "POST"])
 def auth_register():
@@ -42,3 +45,5 @@ def auth_register():
     db.session.commit()
 
     return redirect(url_for("index"))
+
+

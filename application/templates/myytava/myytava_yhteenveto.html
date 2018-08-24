@@ -4,21 +4,21 @@
 
 {% block body %}
   <table>
-	  <h2>Tuoteryhmätietoa</h2>
+	  <h2>Tarjoustietoa</h2>
     <tr>
-      <th>Tuoteryhmä</th>
-      <th>Tuotteita (kpl)</th>
+      <th>Myytava</th>
+      <th>Ostotarjouksia (kpl)</th>
 
       <th></th>
     </tr>
-    {% for myytava in myytavat %}
+    {% for myytava in lista %}
     <tr>
 
       <td>{{ myytava.name }}</td>
-      <td>{{ myytava.id }}</td>
+      <td>{{ myytava.tarjoushinta }}</td>
 	  <td>
 
-	    <a href="{{ url_for('myytava_laske', tuoteryhma_id=tuoteryhma.id) }}"></a>
+
 
       </td>
 

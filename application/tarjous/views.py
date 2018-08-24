@@ -1,21 +1,21 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 
 from application.myytava.models import Myytava
 from application.tarjous.models import Tarjous
 from application.tarjous.forms import TarjousForm
 from application.auth.models import Asiakas
 
-
 @app.route("/tarjous/", methods=["GET"])
+@login_required()
 def tarjous_index():
     return render_template("tarjous/tarjous_list.html", tarjoukset = Tarjous.query.all())
 
 
 @app.route("/tarjous/<myytava_id>/", methods=["POST"])
-@login_required
+@login_required(rooli="ADMIN")
 def tarjous_create(myytava_id):
     form = TarjousForm(request.form)
     t = Myytava.query.get(myytava_id)
@@ -36,8 +36,6 @@ def tarjous_create(myytava_id):
 
     return render_template("myytava/myytavan_tiedot.html", myytava = t)
 
-#    def __init__(self, asiakasid,myytavaid,summa):
-#        self.account_id = asiakasid
-#        self.myytava_id = myytavaid
-#        self.tarjoussumma = summa
+
+
 
