@@ -52,5 +52,5 @@ HUOM:
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasite.md">Käsitekaavio</a>
 
-Testilinkki muuhun dokumentaatioon: <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/eka.md">Eka doc</a>
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kayttoohje.md">Käyttöohje</a>
 

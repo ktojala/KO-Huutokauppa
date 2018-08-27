@@ -3,7 +3,8 @@
 
 {% block body %}
   <table>
-	  <h2>Myytävä tuote</h2>
+	<h2>Myytävä tuote</h2>
+
     <tr>
       <th>Nimike</th>
       <td>{{ myytava.name }}</td>
@@ -29,19 +30,17 @@
       <td>{{ myytava.tarjousaikaa }} vrk</td>
     <tr>
 
-	  <td>
-	    <form method="POST" action="{{ url_for('tarjous_create', myytava_id=myytava.id) }}">
-    	  <input type="submit" value="Tee tarjous"/>
-    	</form>
-      </td>
+	<td>
+      <form method="POST" action="{{ url_for('tarjous_create', myytava_id=myytava.id) }}">
+    	<input type="submit" value="Tee tarjous"/>
+      </form>
+    </td>
 
-
-      <td colspan="1">
-        <form method="GET" action="{{ url_for('myytavat_index') }}">
-	      <input type="submit" value="Paluu"/>
-    	</form>
-	  </td>
-
+    <td colspan="1">
+      <form method="GET" action="{{ url_for('myytavat_index') }}">
+	    <input type="submit" value="Paluu"/>
+      </form>
+	</td>
 
   </form>
 {% endblock %}
