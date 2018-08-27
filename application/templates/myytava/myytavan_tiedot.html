@@ -17,15 +17,17 @@
     </tr>
       <th>Kuva:  </th>
       <td>Tuotteesta ei kuvaa</td>
-      <td></td>
     <tr>
 
     </tr>
       <th>Tuotteesta on tarjottu:  </th>
       <td>{{ myytava.tarjoushinta }} euroa</td>
-      <td></td>
     <tr>
 
+    </tr>
+      <th>Tarjousaikaa jäljellä: </th>
+      <td>{{ myytava.tarjousaikaa }} vrk</td>
+    <tr>
 
 	  <td>
 	    <form method="POST" action="{{ url_for('tarjous_create', myytava_id=myytava.id) }}">

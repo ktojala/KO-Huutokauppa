@@ -9,7 +9,7 @@
       <th>Tuoteryhmässä</th>
       <th>Myytävänä</th>
       <th>Korkein tarjous (eur)</th>
-
+      <th>Tarjousaikaa jäljellä (vrk)</th>
 
       <th></th>
     </tr>
@@ -19,7 +19,7 @@
       <td>{{ myytava.tuoteryhmatxt }}</td>
       <td>{{ myytava.name }}</td>
       <td>{{ myytava.tarjoushinta }}</td>
-
+      <td>{{ myytava.tarjousaikaa }}</td>
 	  <td>
 	    <form method="POST" action="{{ url_for('myytava_tietoa', myytava_id=myytava.id) }}">
 	      <input type="submit" value="Tietoa tuotteesta"/>
