@@ -1,7 +1,7 @@
   {% extends "layout.html" %}
 
   {% block body %}
-  <form method="POST" action="{{ url_for('myytava_create', tuoteryhma_id=tuoteryhma.id) }}">
+  <form method="POST" action="{{ url_for('myytava_luo', tuoteryhma_id=tuoteryhma.id) }}">
 
     <table>
 
@@ -24,7 +24,7 @@
 
       <tr>
 	    <td>
-	      {{ form.tuotetietoa.label }}
+          {{ form.tuotetietoa.label }}
 	    </td>
 	    <td>
 	      {{ form.tuotetietoa }}
@@ -50,6 +50,24 @@
         <td>
 	      <ul>
 	       {% for error in form.aloitushinta.errors %}
+	         <li>{{ error }}</li>
+	           {% endfor %}
+	      </ul>
+	    </td>
+    </tr>
+
+
+	<tr>
+  	  <td>
+	    {{ form.tarjousaikaa.label }}
+	  </td>
+	  <td>
+	    {{ form.tarjousaikaa }}
+	  </td>
+
+        <td>
+	      <ul>
+	       {% for error in form.tarjousaikaa.errors %}
 	         <li>{{ error }}</li>
 	           {% endfor %}
 	      </ul>

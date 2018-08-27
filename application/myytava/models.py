@@ -9,7 +9,7 @@ class Myytava(Base):
     aloitushinta = db.Column(db.Integer, nullable=False)
     tarjoushinta = db.Column(db.Integer, nullable=False)
     tuotetietoa = db.Column(db.String(144), nullable=False)
-
+    tarjousaikaa = db.Column(db.Integer, nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     tuoteryhma_id = db.Column(db.Integer, db.ForeignKey('tuoteryhma.id'), nullable=False)
     tuoteryhmatxt = db.Column(db.String(40), nullable=False)

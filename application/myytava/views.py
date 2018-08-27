@@ -36,9 +36,9 @@ def myytava_delete(myytava_id):
     return redirect(url_for("myytavat_index"))
 
 
-@app.route("/myytava/<tuoteryhma_id>/create/", methods=["POST"])
+@app.route("/myytava/<tuoteryhma_id>/luo/", methods=["POST"])
 @login_required()
-def myytava_create(tuoteryhma_id):
+def myytava_luo(tuoteryhma_id):
     form = MyytavaForm(request.form)
     tuoteryhma = Tuoteryhma.query.get(tuoteryhma_id)
 
@@ -46,9 +46,10 @@ def myytava_create(tuoteryhma_id):
         return render_template("myytava/uusimyytava.html", form = form, tuoteryhma = tuoteryhma)  
 
     t = Myytava(form.name.data,1,tuoteryhma.name)
-    t.tuotetietoa = form.tuotetietoa.data
     t.aloitushinta = form.aloitushinta.data
     t.tarjoushinta = form.aloitushinta.data
+    t.tuotetietoa = form.tuotetietoa.data
+    t.tarjousaikaa = form.tarjousaikaa.data
     t.account_id = current_user.id
     t.tuoteryhma_id = tuoteryhma_id
 

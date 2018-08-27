@@ -1,5 +1,4 @@
 
-
 {% extends "layout.html" %}
 
 {% block body %}
@@ -10,23 +9,18 @@
       <th>Tuoteryhmässä</th>
       <th>Myytava</th>
       <th>Hinta</th>
-
+      <th>Tarjousaikaa jäljellä (vrk)</th>
       <th></th>
     </tr>
+
     {% for myytava in tars %}
+
     <tr>
-
-
       <td>{{ myytava.id }}</td>
       <td>{{ myytava.tuoteryhmatxt }}</td>
       <td>{{ myytava.name }}</td>
       <td>{{ myytava.tarjoushinta }}</td>
-	  <td>
-
-
-
-      </td>
-
+	  <td>{{ myytava.tarjousaikaa }}</td>
     </tr>
     {% endfor %}
 

@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
-
     <body>
 
       <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -16,42 +15,34 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
 
-               <li class="nav-item">
-	             <a class="nav-link" href="{{ url_for('tuoteryhmat_index') }}">Selaa tuoteryhmiä</a>
-               </li>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
 
-               <li class="nav-item">
-	             <a class="nav-link" href="{{ url_for('myytavat_index') }}">Selaa myytäviä</a>
-               </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('tuoteryhmat_index') }}">Selaa tuoteryhmiä</a>
+            </li>
 
+            <li class="nav-item">
+	          <a class="nav-link" href="{{ url_for('myytavat_index') }}">Selaa myytäviä</a>
+            </li>
 
+            <li class="nav-item">
+	          <a class="nav-link" href="{{ url_for('tarjous_index') }}">Selaa tarjouksia</a>
+            </li>
+ 
+          </ul>
 
-               <li class="nav-item">
-	             <a class="nav-link" href="{{ url_for('tarjous_index') }}">Selaa tarjouksia</a>
-               </li>
+        <div class="form-inline mt-2 mt-md-0">
 
+        {% if current_user.is_authenticated %}
+          Kirjautuneena: {{ current_user.name }} <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
 
-
-            </ul>
-
-              <div class="form-inline mt-2 mt-md-0">
-
-                {% if current_user.is_authenticated %}
-                    Kirjautuneena: {{ current_user.name }} <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
-
-                {% else %}
-#                <ul class="navbar-nav">
-#                  <li class="nav-item">
-	                <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
-	                <a href="{{ url_for('auth_register') }}">  Rekisteröidy</a>
- #                 </li>
-
-#                </ul>
-                {% endif %}
-          </div>
+        {% else %}
+	      <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+	      <a href="{{ url_for('auth_register') }}">  Rekisteröidy</a>
+        {% endif %}
+            </div>
         </div>
       </nav>    
 
@@ -61,20 +52,21 @@
 		Kätevä nettihuutokauppa sinunkin tarpeisiisi.
 		Liity asiakkaaksi jo tänään! <a href="{{ url_for('auth_register') }}">Rekisteröidy asiakkaaksi tästä</a>
 	  </p>
+	  <p>
+        Jos haluat asettaa tuotteita myytäväksi, lähetä sähköpostia ja saat ohjeet: bull@trumbull.fi
+	  </p>
 
       <ul>
 	    <li><a href="{{ url_for('tuoteryhma_form') }}">Lisää tuoteryhmä</a></li>
 	    <li><a href="{{ url_for('myytava_yhteenveto') }}">Tuotteet joista ei tarjouksia vielä</a></li>
-
       </ul>
       
-
       <main role="main" class="container">
-      {% block body %}
-      <p>
-	Content.
-      </p>
-      {% endblock %}
+        {% block body %}
+        <p>
+	      Content.
+        </p>
+        {% endblock %}
       </main>
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
