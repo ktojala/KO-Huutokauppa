@@ -11,7 +11,7 @@ Sovellus on kenen tahansa käytettävissä Heroku-palvelussa: https://tsoha-ko-h
 ## Käyttöohje - asiakas
 
 - Asiakkaaksi rekisteröitynyt voi tehdä myös ostotarjouksia
-- Asiakas voi laittaa tuotteita myyntiin vain ottamalla ensin yhteyttä osoitteeseen bull@trumbull.
+- Asiakas voi laittaa tuotteita myyntiin vain ottamalla ensin yhteyttä osoitteeseen bull@trumbull.fi
 
 ## Käyttöohje - admin
 
