@@ -86,3 +86,20 @@ def myytava_vahenna_paiva():
     return redirect(url_for("myytavat_index"))
 
 
+@app.route("/myytava/umpeutuneet_nayta/")
+@login_required()
+def myytava_umpeutuneet_nayta():
+
+    return render_template("myytava/myytava_umpeutuneet.html", tars= Myytava.query.filter(Myytava.tarjousaikaa==0))
+
+
+@app.route("/myytava/umpeutuneet_poista/")
+@login_required()
+def myytava_umpeutuneet_poista():
+
+    Myytava.query.filter_by(tarjousaikaa=0).delete()
+    db.session().commit()
+
+    return redirect(url_for("myytavat_index"))
+
+

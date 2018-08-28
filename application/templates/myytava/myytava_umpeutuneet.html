@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+	  <h2>Myytävät tuotteet, joiden tarjousaika umpeutunut</h2>
+    <tr>
+      <th>Id</th>
+      <th>Tuoteryhmässä</th>
+      <th>Myytava</th>
+      <th>Hinta</th>
+      <th>Tarjousaikaa jäljellä (vrk)</th>
+      <th></th>
+    </tr>
+
+    {% for myytava in tars %}
+
+    <tr>
+      <td>{{ myytava.id }}</td>
+      <td>{{ myytava.tuoteryhmatxt }}</td>
+      <td>{{ myytava.name }}</td>
+      <td>{{ myytava.tarjoushinta }}</td>
+	  <td>{{ myytava.tarjousaikaa }}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}
+
+
