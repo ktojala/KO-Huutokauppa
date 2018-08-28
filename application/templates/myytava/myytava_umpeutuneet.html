@@ -21,6 +21,13 @@
       <td>{{ myytava.name }}</td>
       <td>{{ myytava.tarjoushinta }}</td>
 	  <td>{{ myytava.tarjousaikaa }}</td>
+
+      <td>
+	    <form method="GET" action="{{ url_for('myytava_poista', myytava_id=myytava.id) }}">
+	      <input type="submit" value="Poista myytävä"/>
+	    </form>
+      </td>
+
     </tr>
     {% endfor %}
 

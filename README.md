@@ -4,11 +4,11 @@ Tietokantasovellusharjoitus - tehtävän kuvaus (kuvaukseen voi tulla vielä muu
 
 Huutokauppakamari haluaa rakentaa huutokauppajärjestelmän, jonka avulla se voi kaupata tuotteita verkossa.
 Huutokauppakamari luokittelee myyntiin saamansa tuotteet ja laatii niistä myyntiesitteen. Esitteessä on mm. tuotteen kuvaus ja vähimmäishinta. Siihen voi sisältyä tuotteen kuva. Esitteessä kerrotaan myös milloin kauppa päättyy. Kun huutokauppa on avattu, asiakas saa näkyviinsä myös tämänhetkisen korkeimman tarjouksen.
-Kuka tahansa pääsee katsomaan tarjolla olevia tuotteita, mutta tarjouksen tekeminen edellyttää kirjautumista asiakkaaksi. Tarjouksen yhteydessä asiakas antaa henkilötietonsa. 
+Kuka tahansa pääsee katsomaan tarjolla olevia tuotteita, mutta tarjouksen tekeminen edellyttää kirjautumista asiakkaaksi. Tarjouksen yhteydessä asiakas antaa henkilötietonsa, mukaanlukien sähköpostiosoitteen. 
 
-Meklarit valvovat kauppaa ottamalla aika ajoin seurantalistoja, joista pitäisi käydä esiin korkein tarjous, onko tarjousta tehty lainkaan ja erityisesti huomattavat poikkeamat tarjoushinnassa. Tällaisissa tapauksissa meklari varmistaa tarjouksen aitouden (tämä automatisoidaan). Näin tehdään myös aina ennen kaupan sulkemista. Varmistus voidaan hoitaa sähköpostitse. Jos huutokaupan päättyessä viimeisin tarjous ei ollut aito myydään tavara edelliselle tarjoajalle, jne. Meklari sulkee kaupan kun asiakas on maksanut laskun (järjestelmän ulkopuolella).
+Meklarit valvovat kauppaa ottamalla aika ajoin seurantalistoja. Ennen kaupan sulkemista meklari varmistaa tarjouksen aitouden sähköpostitse. Jos huutokaupan päättyessä viimeisin tarjous ei ollut aito myydään tavara edelliselle tarjoajalle, jne. Meklari sulkee kaupan kun asiakas on maksanut laskun (tämän järjestelmän ulkopuolella).
 
-Vain huutokauppakamarin edustaja voi lisätä huutokaupan sivuille tuotteita ja tuoteryhmiä sekä tarvittaessa muokata ja poistaa näitä, samoin kuin verkossa näkyviä toimintaohjeita.
+Vain huutokauppakamarin edustaja (admin) voi lisätä huutokaupan sivuille tuotteita ja tuoteryhmiä sekä tarvittaessa poistaa näitä, samoin kuin verkossa näkyviä toimintaohjeita.
 
 Toimintoja:
 - Tuotetietojen (=myytava) syöttö ja muokkaus
@@ -23,8 +23,7 @@ Toimintoja:
 - Kamarin edustaja voi tuottaa tietokannasta rajoitetusti myyntitilastoja
 
 HUOM: 
-- Tarjousten teko toimii nyt uudesta tarjouksentekonäkymästä.
-- Toistaiseksi YHTEENVETOKYSELY löytyy /application/auth/model.py -tiedostosta.
+- YHTEENVETOKYSELY löytyy /application/auth/model.py -tiedostosta.
 
 ## Viime hetken SUUNNITELMA työn viimeistelyyn
 - Yläpalkkiin perusasiakkaan tehtävät
@@ -36,6 +35,7 @@ HUOM:
 - Adminille lisätoiminnallisuuksia:
 - vähennä tarjousajasta 1 päivä, käsittele ja poista tarjousajaltaan umpeutuneet
 - admininille ja asiakkaalle selkeämmin omat näkymät
+- Poista korkein tarjous (jos se osoittautui epäkelvoksi)
 
 ## Kirjautuminen:
 - Käyttäjätunnus: testi
