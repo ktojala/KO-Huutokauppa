@@ -16,7 +16,7 @@ def myytavat_index():
 
 
 @app.route("/myytava/<tuoteryhma_id>/open/", methods=["POST"])
-def tuoteryhma_open(tuoteryhma_id):
+def tuoteryhma_avaa(tuoteryhma_id):
     return render_template("myytava/myytava_list.html", myytavat = Myytava.query.filter_by(tuoteryhma_id=tuoteryhma_id))
 
 
@@ -26,9 +26,9 @@ def myytava_form():
     return render_template("myytava/uusimyytava.html", form = MyytavaForm())
 
 
-@app.route("/myytava/<myytava_id>/delete/", methods=["GET"])
+@app.route("/myytava/<myytava_id>/poista/", methods=["GET"])
 @login_required()
-def myytava_delete(myytava_id):
+def myytava_poista(myytava_id):
 
     Myytava.query.filter_by(id=myytava_id).delete()
     db.session().commit()
@@ -64,8 +64,6 @@ def myytava_luo(tuoteryhma_id):
 def myytava_tietoa(myytava_id):
 
     myytava = Myytava.query.get(myytava_id)
-
-#    return redirect(url_for("myytavat_index"), myytava = myytava)
     return render_template("myytava/myytavan_tiedot.html", myytava = myytava)
 
 
@@ -74,5 +72,17 @@ def myytava_tietoa(myytava_id):
 def myytava_yhteenveto():
 
     return render_template("myytava/myytava_yhteenveto.html", tars= Myytava.query.filter(Myytava.aloitushinta==Myytava.tarjoushinta))
+
+
+@app.route("/myytava/vahenna_paiva/")
+@login_required()
+def myytava_vahenna_paiva():
+    myytavat = Myytava.query.all()
+    for m in myytavat:
+        if m.tarjousaikaa > 0:
+            m.tarjousaikaa -= 1
+    db.session().add(m)
+    db.session().commit()    
+    return redirect(url_for("myytavat_index"))
 
 

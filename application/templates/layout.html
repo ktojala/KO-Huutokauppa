@@ -53,12 +53,13 @@
 		Liity asiakkaaksi jo tänään! <a href="{{ url_for('auth_register') }}">Rekisteröidy asiakkaaksi tästä</a>
 	  </p>
 	  <p>
-        Jos haluat asettaa tuotteita myytäväksi, lähetä sähköpostia ja saat ohjeet: bull@trumbull.fi
+        Jos haluat asettaa tuotteita myytäväksi, lähetä sähköpostia ja saat ohjeet: bull@trumbull.bt
 	  </p>
 
       <ul>
 	    <li><a href="{{ url_for('tuoteryhma_form') }}">Lisää tuoteryhmä</a></li>
 	    <li><a href="{{ url_for('myytava_yhteenveto') }}">Tuotteet joista ei tarjouksia vielä</a></li>
+	    <li><a href="{{ url_for('myytava_vahenna_paiva') }}">Vähenna tarjousajoista päivä</a></li>
       </ul>
       
       <main role="main" class="container">
