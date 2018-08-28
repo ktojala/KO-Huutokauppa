@@ -1,12 +1,12 @@
   {% extends "layout.html" %}
 
   {% block body %}
-<h2>Tarjouslomake kohteesta </h2>
+<h2>Tarjouslomake kohteesta: {{myytava.name}}</h2>
+<h6>Edellinen tarjous:       {{myytava.tarjoushinta}} euroa</h6>
 
-  <form method="POST" action="{{ url_for("tarjous_create", myytava_id=myytava.id) }}">
+  <form method="POST" action="{{ url_for("tarjous_luo", myytava_id=myytava.id) }}">
 
     <table>
-
 
 	<tr>
   	  <td>

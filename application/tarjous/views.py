@@ -24,7 +24,7 @@ def tarjous_index_omat():
 
 @app.route("/tarjous/<myytava_id>/", methods=["POST"])
 @login_required(rooli="ADMIN")
-def tarjous_create(myytava_id):
+def tarjous_luo(myytava_id):
     form = TarjousForm(request.form)
     t = Myytava.query.get(myytava_id)
     if not form.validate():
