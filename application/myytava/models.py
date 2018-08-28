@@ -30,16 +30,10 @@ class Myytava(Base):
 
         return res
 
-        
-    @staticmethod
-    def montako_tuotetta_ryhmassa(tr):
-        stmt = text("SELECT COUNT(*) FROM myytava WHERE tuoteryhma_id=tr.id")
-        res = db.engine.execute(stmt).scalar()
-        return res
-
 
     @staticmethod
     def anna_tuotenimi(syote):
         res = db.engine.execute("SELECT myytava.name FROM myytava WHERE myytava.id=syote.id").scalar()
         return res
+
 

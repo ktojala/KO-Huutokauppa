@@ -14,6 +14,14 @@ def tarjous_index():
     return render_template("tarjous/tarjous_list.html", tarjoukset = Tarjous.query.all())
 
 
+@app.route("/tarjous/omat", methods=["GET"])
+@login_required()
+def tarjous_index_omat():
+
+    t = Tarjous.query.filter_by(account_id=current_user.id)
+    return render_template("tarjous/tarjous_list_omat.html", tarjoukset = t)
+
+
 @app.route("/tarjous/<myytava_id>/", methods=["POST"])
 @login_required(rooli="ADMIN")
 def tarjous_create(myytava_id):
@@ -35,7 +43,6 @@ def tarjous_create(myytava_id):
                 return render_template("tarjous/tarjous_error.html", myytava = t)
 
     return render_template("myytava/myytavan_tiedot.html", myytava = t)
-
 
 
 

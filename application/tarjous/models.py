@@ -1,5 +1,7 @@
 from application import db
 from application.models import Base
+from application.myytava.models import Myytava
+from sqlalchemy.sql import text
   
 class Tarjous(Base):
 
@@ -13,4 +15,17 @@ class Tarjous(Base):
         self.account_id = asiakasid
         self.myytava_id = myytavaid
         self.tarjoussumma = summa
+
+
+    @staticmethod
+    def myytavan_nimi(m_id):
+        stmt = text("SELECT myytava.name FROM myytava WHERE myytava.id = :idi").params(idi=m_id)
+        res = db.engine.execute(stmt)
+        response = []
+
+        for nimi in res:
+            response.append(nimi[0])
+
+        return response
+
 

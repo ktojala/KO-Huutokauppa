@@ -28,7 +28,7 @@
             </li>
 
             <li class="nav-item">
-	          <a class="nav-link" href="{{ url_for('tarjous_index') }}">Selaa tarjouksia</a>
+	          <a class="nav-link" href="{{ url_for('tarjous_index_omat') }}">Omat tarjoukset</a>
             </li>
  
           </ul>
@@ -53,11 +53,12 @@
 		Liity asiakkaaksi jo tänään! <a href="{{ url_for('auth_register') }}">Rekisteröidy asiakkaaksi tästä</a>
 	  </p>
 	  <p>
-        Jos haluat asettaa tuotteita myytäväksi, lähetä sähköpostia ja saat ohjeet: bull@trumbull.bt
+        Jos haluat asettaa tuotteita myytäväksi, lähetä sähköpostia bull@trumbull.bt ja saat ohjeet.
 	  </p>
 
       <ul>
 	    <li><a href="{{ url_for('tuoteryhma_form') }}">Lisää tuoteryhmä</a></li>
+	    <li><a href="{{ url_for('tarjous_index') }}">Kaikki tarjoukset</a></li>
 	    <li><a href="{{ url_for('myytava_yhteenveto') }}">Tuotteet joista ei tarjouksia vielä</a></li>
 	    <li><a href="{{ url_for('myytava_vahenna_paiva') }}">Vähenna tarjousajoista päivä</a></li>
 	    <li><a href="{{ url_for('myytava_umpeutuneet_nayta') }}">Näytä umpeutuneet myytävät</a>
