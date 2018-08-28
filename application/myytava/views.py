@@ -8,7 +8,7 @@ from application.myytava.models import Myytava
 from application.myytava.forms import MyytavaForm
 from application.auth.models import Asiakas
 from application.auth.forms import RegForm
-
+from application.tarjous.models import Tarjous
 
 @app.route("/myytava/", methods=["GET"])
 def myytavat_index():
@@ -30,10 +30,13 @@ def myytava_form():
 @login_required()
 def myytava_poista(myytava_id):
 
-    Myytava.query.filter_by(id=myytava_id).delete()
-    db.session().commit()
+# Poistetaan ensin tarjoukset jotka tehty poistettavasta myytävästä
 
-    return redirect(url_for("myytavat_index"))
+    Tarjous.myytavan_tarjoukset_poista(myytava_id)
+
+    Myytava.query.filter_by(id=myytava_id).delete()
+    db.session.commit()
+    return render_template("myytava/myytava_umpeutuneet.html", tars= Myytava.query.filter(Myytava.tarjousaikaa==0))
 
 
 @app.route("/myytava/<tuoteryhma_id>/luo/", methods=["POST"])

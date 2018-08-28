@@ -1,7 +1,10 @@
   {% extends "layout.html" %}
 
   {% block body %}
-<h2>Tarjouslomake kohteesta: {{myytava.name}}</h2>
+<h2>Teen tarjouksen kohteesta: {{myytava.name}}</h2>
+<p></p>
+<p>Uuden tarjouksen on oltava suurempi kuin edellinen tarjous.</p>
+<p>Uusi tarjous voi olla enintään kolminkertainen edelliseen tarjoukseen verrattuna.</p>
 <h6>Edellinen tarjous:       {{myytava.tarjoushinta}} euroa</h6>
 
   <form method="POST" action="{{ url_for("tarjous_luo", myytava_id=myytava.id) }}">

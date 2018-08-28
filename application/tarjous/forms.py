@@ -3,7 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import IntegerField, validators
 
 class TarjousForm(FlaskForm):
-    tarjoussumma = IntegerField("Tarjoukseni (tasaluku euroina)", [validators.NumberRange(min=0, message="Tarjouksen oltava suurempi kuin edellinen tarjous")])
+    tarjoussumma = IntegerField("Tarjoukseni: ", [validators.NumberRange(min=0,message="tasaluku euroina")])
 
     class Meta:
         csrf = False

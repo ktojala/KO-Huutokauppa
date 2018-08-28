@@ -28,4 +28,10 @@ class Tarjous(Base):
 
         return response
 
+    @staticmethod
+    def myytavan_tarjoukset_poista(myytava_id):
+
+        stmt = text("DELETE FROM tarjous WHERE tarjous.myytava_id = :idi").params(idi=myytava_id)
+        db.engine.execute(stmt)
+        return
 

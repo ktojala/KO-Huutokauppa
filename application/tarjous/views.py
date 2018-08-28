@@ -32,15 +32,17 @@ def tarjous_luo(myytava_id):
 
     if form.validate():
         if form.tarjoussumma.data != 0:
-            if form.tarjoussumma.data > t.tarjoushinta:
+            if form.tarjoussumma.data > t.tarjoushinta and form.tarjoussumma.data <= 3*t.tarjoushinta:
                 t.tarjoushinta = form.tarjoussumma.data
                 db.session().commit()
                 tt = Tarjous(current_user.id,t.id,form.tarjoussumma.data)
                 db.session().add(tt)
                 db.session().commit()
                 return render_template("tarjous/tarjousvahvistus.html", myytava = t)
+            elif form.tarjoussumma.data > 3*t.tarjoushinta:
+                return render_template("tarjous/tarjous_error2.html", myytava = t)
             else:
-                return render_template("tarjous/tarjous_error.html", myytava = t)
+                return render_template("tarjous/tarjous_error1.html", myytava = t)
 
     return render_template("myytava/myytavan_tiedot.html", myytava = t)
 
