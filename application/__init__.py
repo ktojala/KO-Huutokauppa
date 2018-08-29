@@ -46,8 +46,8 @@ def login_required(rooli="ANY"):
             if rooli != "ANY":
                 unauthorized = True
 
-#                for user_role in current_user.roles():
-            for user_role in Rooli.anna_kayttajan_roolit(current_user.id):
+            for user_role in current_user.roolit():
+#            for user_role in Rooli.anna_kayttajan_roolit(current_user.id):
                 if user_role == rooli:
                     unauthorized = False
                     break
@@ -94,8 +94,8 @@ try:
             if asia.name == 'admin':
                 asiakkaat.append(asia.name)
         if asiakkaat == []:
-            admin = Asiakas("admin","a@sti","admin","kadmin")
-            testaaja = Asiakas("testaaja","t@sti","testi","kesti")
+            admin = Asiakas("admin","a@sti","admin","kadmin","ADMIN")
+            testaaja = Asiakas("testaaja","t@sti","testi","kesti","ASIAKAS")
 
             admin_rooli = Rooli("ADMIN")
             asiakas_rooli = Rooli("ASIAKAS")
