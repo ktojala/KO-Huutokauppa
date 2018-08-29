@@ -30,7 +30,7 @@ def tuoteryhma_form():
 
 @app.route("/tuoteryhma/<tuoteryhma_id>/delete/", methods=["GET"])
 @login_required()
-def tuoteryhma_delete(tuoteryhma_id):
+def tuoteryhma_poista(tuoteryhma_id):
 
     Tuoteryhma.query.filter_by(id=tuoteryhma_id).delete()
     db.session().commit()
@@ -40,7 +40,7 @@ def tuoteryhma_delete(tuoteryhma_id):
 
 @app.route("/tuoteryhma/create/", methods=["POST"])
 @login_required()
-def tuoteryhma_create():
+def tuoteryhma_luo():
     form = TuoteryhmaForm(request.form)
 
     if not form.validate():

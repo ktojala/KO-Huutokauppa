@@ -112,7 +112,11 @@ try:
             ar2.account_id = testaaja.id
             ar2.rooli_id = asiakas_rooli.id
 
-            db.session.add_all((ar1,ar2))
+            ar3=AsiakasRooli()
+            ar3.account_id = admin.id
+            ar3.rooli_id = asiakas_rooli.id
+
+            db.session.add_all((ar1,ar2,ar3))
             db.session.commit()
 
     except:
