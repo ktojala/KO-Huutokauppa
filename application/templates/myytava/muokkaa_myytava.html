@@ -1,0 +1,86 @@
+  {% extends "layout.html" %}
+
+  {% block body %}
+  <form method="POST" action="{{ url_for('myytava_muokkaa', myytava_id=myytava.id) }}">
+
+    <table>
+	  <h2>Uuden myytävän tuotteen asetus</h2>
+      <tr>
+	    <td>
+	      {{ form.name.label }}
+	    </td>
+	    <td>
+	      {{ form.name }}
+	    </td>
+
+        <td>
+	      <ul>
+	       {% for error in form.name.errors %}
+	         <li>{{ error }}</li>
+	           {% endfor %}
+	      </ul>
+	    </td>
+      </tr>
+
+      <tr>
+	    <td>
+          {{ form.tuotetietoa.label }}
+	    </td>
+	    <td>
+	      {{ form.tuotetietoa }}
+	    </td>
+
+        <td>
+	      <ul>
+	       {% for error in form.tuotetietoa.errors %}
+	         <li>{{ error }}</li>
+	           {% endfor %}
+	      </ul>
+	    </td>
+      </tr>
+
+	<tr>
+  	  <td>
+	    {{ form.aloitushinta.label }}
+	  </td>
+	  <td>
+	    {{ form.aloitushinta }}
+	  </td>
+
+        <td>
+	      <ul>
+	       {% for error in form.aloitushinta.errors %}
+	         <li>{{ error }}</li>
+	           {% endfor %}
+	      </ul>
+	    </td>
+    </tr>
+
+
+	<tr>
+  	  <td>
+	    {{ form.tarjousaikaa.label }}
+	  </td>
+	  <td>
+	    {{ form.tarjousaikaa }}
+	  </td>
+
+        <td>
+	      <ul>
+	       {% for error in form.tarjousaikaa.errors %}
+	         <li>{{ error }}</li>
+	           {% endfor %}
+	      </ul>
+	    </td>
+    </tr>
+
+
+	<tr>
+      <td colspan="3">
+	    <input type="submit" value="Lisää myytävä tuote"/>
+	  </td>
+    </tr>
+
+  </form>
+{% endblock %}
+

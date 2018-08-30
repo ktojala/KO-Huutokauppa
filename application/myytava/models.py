@@ -37,3 +37,9 @@ class Myytava(Base):
         return res
 
 
+    @staticmethod
+    def annatuoteryhma(syote):
+        stmt = ("SELECT tuoteryhma_id FROM myytava WHERE myytava.id=syote.id;")
+        res = db.engine.execute(stmt).scalar()
+
+        return res

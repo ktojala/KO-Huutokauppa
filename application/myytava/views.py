@@ -26,6 +26,16 @@ def myytava_form():
     return render_template("myytava/uusimyytava.html", form = MyytavaForm())
 
 
+@app.route("/myytava/<myytava_id>/muokkaa/", methods=["POST"])
+@login_required()
+def myytava_muokkaa(myytava_id):
+
+    Myytava.query.filter_by(id=myytava_id).delete()
+    db.session.commit()
+
+    return render_template("myytava/myytava_eitarjouksia.html", tars= Myytava.query.filter(Myytava.aloitushinta==Myytava.tarjoushinta))
+
+
 @app.route("/myytava/<myytava_id>/poista/", methods=["GET"])
 @login_required()
 def myytava_poista(myytava_id):
@@ -70,11 +80,11 @@ def myytava_tietoa(myytava_id):
     return render_template("myytava/myytavan_tiedot.html", myytava = myytava)
 
 
-@app.route("/myytava/yhteenveto/")
+@app.route("/myytava/eitarjouksia/")
 @login_required()
-def myytava_yhteenveto():
+def myytava_eitarjouksia():
 
-    return render_template("myytava/myytava_yhteenveto.html", tars= Myytava.query.filter(Myytava.aloitushinta==Myytava.tarjoushinta))
+    return render_template("myytava/myytava_eitarjouksia.html", tars= Myytava.query.filter(Myytava.aloitushinta==Myytava.tarjoushinta))
 
 
 @app.route("/myytava/vahenna_paiva/")

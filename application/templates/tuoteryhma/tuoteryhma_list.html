@@ -9,34 +9,35 @@
       <th>Id</th>
       <th>Tuoteryhmä</th>
       <th>Tuotteita (kpl)</th>
-
       <th></th>
+
     </tr>
-    {% for tuoteryhma in tuoteryhmat %}
-    <tr>
-      <td>{{ tuoteryhma.id }}</td>
-      <td>{{ tuoteryhma.name }}</td>
-      <td>{{ tuoteryhma.montako_tuotetta_ryhmassa(tuoteryhma) }}</td>
+      {% for tuoteryhma in tuoteryhmat %}
+      <tr>
+        <td>{{ tuoteryhma.id }}</td>
+        <td>{{ tuoteryhma.name }}</td>
+        <td>{{ tuoteryhma.montako_tuotetta_ryhmassa(tuoteryhma) }}</td>
 
+	    <td>
+	      <form method="POST" action="{{ url_for('tuoteryhma_avaa', tuoteryhma_id=tuoteryhma.id) }}">
+	        <input type="submit" value="Avaa tuoteryhmä"/>
+	      </form>
+        </td>
 
-	  <td>
-	    <form method="POST" action="{{ url_for('tuoteryhma_avaa', tuoteryhma_id=tuoteryhma.id) }}">
-	      <input type="submit" value="Avaa tuoteryhmä"/>
-	    </form>
-      </td>
-      {% if current_user.is_authenticated and current_user.has_role("ADMIN") %}
-	  <td>
-	    <form method="POST" action="{{ url_for('myytava_luo', tuoteryhma_id=tuoteryhma.id) }}">
-	      <input type="submit" value="Lisaa myytava"/>
-	    </form>
-      </td>
+        {% if current_user.is_authenticated and current_user.has_role("ADMIN") %}
+	    <td>
+	      <form method="POST" action="{{ url_for('myytava_luo', tuoteryhma_id=tuoteryhma.id) }}">
+	        <input type="submit" value="Lisaa myytava"/>
+	      </form>
+        </td>
 
-      <td>
-	    <form method="GET" action="{{ url_for('tuoteryhma_poista', tuoteryhma_id=tuoteryhma.id) }}">
-	      <input type="submit" value="Poista tuoteryhmä"/>
-	    </form>
-      </td>
-    {% endif %}
+        <td>
+	      <form method="GET" action="{{ url_for('tuoteryhma_poista', tuoteryhma_id=tuoteryhma.id) }}">
+	        <input type="submit" value="Poista tuoteryhmä"/>
+	      </form>
+        </td>
+      {% endif %}
+
     </tr>
     {% endfor %}
 

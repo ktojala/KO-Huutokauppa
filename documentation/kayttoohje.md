@@ -1,7 +1,7 @@
 # KO-Huutokauppa
 
 Sovellus on pääosin tehty siten, että valikot kertovat käyttäjälle sen mitä hän voi tehdä.
-Sovellus on kenen tahansa käytettävissä Heroku-palvelussa: https://tsoha-ko-huutokauppa.herokuapp.com
+Sovellus on kenen tahansa kokeiltavissa Heroku-palvelussa: https://tsoha-ko-huutokauppa.herokuapp.com
 
 ## Käyttöohje - kuka tahansa - any
 
@@ -11,7 +11,7 @@ Sovellus on kenen tahansa käytettävissä Heroku-palvelussa: https://tsoha-ko-h
 ## Käyttöohje - asiakas
 
 - Asiakkaaksi rekisteröitynyt voi tehdä myös ostotarjouksia
-- Asiakas voi laittaa tuotteita myyntiin vain ottamalla ensin yhteyttä osoitteeseen bull@trumbull.bt (eli ei voi)
+- Asiakas voi laittaa tuotteita myyntiin vain ottamalla ensin yhteyttä osoitteeseen Bull@Trumbull.bt (eli ei voi)
 
 ## Käyttöohje - admin
 

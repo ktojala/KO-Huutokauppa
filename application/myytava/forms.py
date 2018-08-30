@@ -9,3 +9,5 @@ class MyytavaForm(FlaskForm):
     tarjousaikaa = IntegerField("Tarjousaikaa jäljellä (3-28 vrk)", [validators.NumberRange(min=3, max=28, message="Oltava 3-28 (vrk)")])
     class Meta:
         csrf = False
+
+

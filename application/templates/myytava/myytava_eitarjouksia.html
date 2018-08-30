@@ -3,27 +3,27 @@
 
 {% block body %}
   <table>
-	  <h2>Myytävät tuotteet</h2>
-      <h6>Klikkaa tietoa tuotteesta ja tee tarjous!</h6>
+	  <h2>Myytävät tuotteet, joista ei ole tehty tarjouksia</h2>
     <tr>
       <th>Id</th>
       <th>Tuoteryhmässä</th>
-      <th>Myytävänä</th>
-      <th>Korkein tarjous (eur)</th>
+      <th>Myytava</th>
+      <th>Hinta</th>
       <th>Tarjousaikaa jäljellä (vrk)</th>
-
       <th></th>
     </tr>
-    {% for myytava in myytavat %}
+
+    {% for myytava in tars %}
+
     <tr>
       <td>{{ myytava.id }}</td>
       <td>{{ myytava.tuoteryhmatxt }}</td>
       <td>{{ myytava.name }}</td>
       <td>{{ myytava.tarjoushinta }}</td>
-      <td>{{ myytava.tarjousaikaa }}</td>
+	  <td>{{ myytava.tarjousaikaa }}</td>
 	  <td>
-	    <form method="POST" action="{{ url_for('myytava_tietoa', myytava_id=myytava.id) }}">
-	      <input type="submit" value="Tietoa tuotteesta"/>
+	    <form method="POST" action="{{ url_for('myytava_muokkaa', myytava_id=myytava.id) }}">
+	      <input type="submit" value="Poista"/>
 	    </form>
       </td>
 
@@ -32,3 +32,5 @@
 
   </table>
 {% endblock %}
+
+
