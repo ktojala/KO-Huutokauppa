@@ -25,7 +25,7 @@ class Myytava(Base):
 
     @staticmethod
     def loyda_kaikki():
-        stmt = ("SELECT myytava.name FROM myytava;")
+        stmt = ("SELECT myytava.name FROM myytava ORDER BY myytava.id;")
         res = db.engine.execute(stmt)
 
         return res
