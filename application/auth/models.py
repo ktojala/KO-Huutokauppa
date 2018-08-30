@@ -32,7 +32,7 @@ class Asiakas(Base):
     myytava = db.relationship("Myytava", backref='account', lazy=True)
     asiakas_rooli = db.relationship("AsiakasRooli", backref='account', lazy=True)
 
-    def __init__(self, name,email,username,password,aarooli):
+    def __init__(self, name,email,username,password):
         self.name = name
         self.email = email
         self.username = username

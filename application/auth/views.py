@@ -40,7 +40,7 @@ def auth_register():
     if not form.validate():
         return render_template("auth/regform.html", form = form)
 
-    asiakas = Asiakas(form.name.data,form.email.data, form.username.data, form.password.data, "ASIAKAS")
+    asiakas = Asiakas(form.name.data,form.email.data, form.username.data, form.password.data)
     db.session.add(asiakas)
     db.session.commit()
 
