@@ -57,7 +57,7 @@
 	  </p>
 
 
-  {% if current_user.is_authenticated and current_user.get_role() == "ADMIN" %}
+      {% if current_user.is_authenticated and current_user.has_role("ADMIN") %}
       <ul>
 	    <li><a href="{{ url_for('tuoteryhma_form') }}">Lisää tuoteryhmä</a></li>
 	    <li><a href="{{ url_for('tarjous_index') }}">Kaikki tarjoukset</a></li>
@@ -65,7 +65,7 @@
 	    <li><a href="{{ url_for('myytava_vahenna_paiva') }}">Vähenna tarjousajoista päivä</a></li>
 	    <li><a href="{{ url_for('myytava_umpeutuneet_nayta') }}">Näytä umpeutuneet myytävät</a>
       </ul>
-{% endif %}
+      {% endif %}
 
       <main role="main" class="container">
         {% block body %}

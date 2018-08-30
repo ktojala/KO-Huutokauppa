@@ -24,7 +24,7 @@
 	      <input type="submit" value="Avaa tuoteryhmä"/>
 	    </form>
       </td>
-      {% if current_user.is_authenticated and current_user.get_role() == "ADMIN" %}
+      {% if current_user.is_authenticated and current_user.has_role("ADMIN") %}
 	  <td>
 	    <form method="POST" action="{{ url_for('myytava_luo', tuoteryhma_id=tuoteryhma.id) }}">
 	      <input type="submit" value="Lisaa myytava"/>

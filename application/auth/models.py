@@ -27,7 +27,7 @@ class Asiakas(Base):
     email = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
-    aarooli = db.Column(db.String(10), nullable=False)
+
     tuoteryhma = db.relationship("Tuoteryhma", backref='account', lazy=True)
     myytava = db.relationship("Myytava", backref='account', lazy=True)
     asiakas_rooli = db.relationship("AsiakasRooli", backref='account', lazy=True)
@@ -37,7 +37,6 @@ class Asiakas(Base):
         self.email = email
         self.username = username
         self.password = password
-        self.aarooli = aarooli
   
     def get_id(self):
         return self.id
@@ -55,24 +54,17 @@ class Asiakas(Base):
         return self.name
 
 
-    def get_role(self):
-        if self.aarooli=="ADMIN":
-            return "ADMIN"
-        return "ASIAKAS"
-
-
     def roolit(self):
         return Rooli.query.join(Rooli.user_roles).filter_by(account_id=self.id).all()
-#        return ["ADMIN"]
 
 
     def has_role(self, rooli_nimike):
-        return True
-#        roolit = self.roolit()
-#        for rooli in roolit:
-#            if rooli.name == rooli_nimike:
-#                return True
-#        return False
+
+        roolit = self.roolit()
+        for rooli in roolit:
+            if rooli.name == rooli_nimike:
+                return True
+        return False
 
 
     @staticmethod

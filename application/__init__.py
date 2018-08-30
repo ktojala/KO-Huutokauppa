@@ -94,8 +94,8 @@ try:
             if asia.name == 'admin':
                 asiakkaat.append(asia.name)
         if asiakkaat == []:
-            admin = Asiakas("admin","a@sti","admin","kadmin","ADMIN")
-            testaaja = Asiakas("testaaja","t@sti","testi","kesti","ASIAKAS")
+            admin = Asiakas("admin","a@sti","admin","kadmin")
+            testaaja = Asiakas("testaaja","t@sti","testi","kesti")
 
             admin_rooli = Rooli("ADMIN")
             asiakas_rooli = Rooli("ASIAKAS")
