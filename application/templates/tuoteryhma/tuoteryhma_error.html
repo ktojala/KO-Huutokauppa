@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Tuoteryhmää ei voi poistaa jos siellä on myytäviä tuotteita.</h2>
+
+      <td colspan="1">
+        <form method="GET" action="{{ url_for('tuoteryhmat_index') }}">
+	      <input type="submit" value="OK"/>
+    	</form>
+	  </td>
+
+{% endblock %}

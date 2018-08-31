@@ -35,7 +35,8 @@ def tuoteryhma_poista(tuoteryhma_id):
     tr = Tuoteryhma.query.filter_by(id=tuoteryhma_id).first()
     a = Myytava.query.filter_by(tuoteryhma_id=tuoteryhma_id).count()
     if a>0:
-        render_template("tuoteryhma/tuoteryhma_list.html", tuoteryhmat = Tuoteryhma.query.all())
+        return render_template("tuoteryhma/tuoteryhma_error.html")
+
     else:
         Tuoteryhma.query.filter_by(id=tuoteryhma_id).delete()
         db.session().commit()
