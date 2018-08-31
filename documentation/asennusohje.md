@@ -12,7 +12,7 @@ Käytössäsi tulee myös olla Pythonin pip-kirjasto apukirjastojen lataamiseen 
 (venv-kirjastolla voit luoda toisistaan riippumattomia Python-projekteja virtuaaliympäristöihin) 
 
 Tarvitset omalle koneellesi SQL-tietokantaohjelmiston.
-SQLite ja PostgreSQ käyvät tähän tarkoitukseen.
+SQLite ja PostgreSQ sopivat tähän tarkoitukseen.
 
 ## Asennustoimet
 
@@ -29,7 +29,5 @@ SQLite ja PostgreSQ käyvät tähän tarkoitukseen.
 
 ## Hyödyllinen tieto
 
-Jos sovellusta käynnistettäessä seuraavat taulut account, rooli, asiakasrooli ovat tyhjät, sovellus luo
-automaattisesti kaksi oletuskäyttäjää: "testi" ja "admin". Käyttäjällä testi on ASIAKAS-rooli ja sitä vastaavat oikeudet, 
-käyttäjällä admin sen lisäksi ADMIN-rooli ja sitä vastaavat oikeudet.
+Jos sovellusta käynnistettäessä taulut account, rooli, asiakasrooli ovat tyhjät, sovellus luo automaattisesti kaksi oletuskäyttäjää: "testi" ja "admin". Käyttäjällä testi on ASIAKAS-rooli ja sitä vastaavat oikeudet, käyttäjällä admin sen lisäksi ADMIN-rooli ja sitä vastaavat oikeudet.
 

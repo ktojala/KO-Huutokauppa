@@ -23,7 +23,7 @@ Voidaan ajatella, että kuka tahansa uusi vierailija joka avaa sovelluksen, toim
 - Asiakkaaksi rekisteröitynyt voi tehdä kaiken sen mitä vierailijakin
 - Asiakas voi lisäksi tehdä ostotarjouksia klikkaamalla Myytavä tuote -näkymässä nappulaa "Tee tarjous"
 - Tarjouksentekosivulla on ohjeistus sitä, millainen tarjus on kelvollinen.
-- Jos tehty aarjous on kelvollinen, asiakas saa siitä vahvistuksen.
+- Jos tehty tarjous on kelvollinen, asiakas saa siitä vahvistuksen.
 - Jos tarjous ei ole kelvollinen, siitä tulee huomautus eikä tarjousta vahvisteta
 - Tarjousivulta pääsee pois peruuttamalla ja asettamalla tarjoukseksi 0 (euroa)
 - Tarjoussivulta pääsee pois myös klikkaamalla jotain yläpalkin linkkiä.

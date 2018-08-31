@@ -49,10 +49,10 @@
 
 
 	  <h2>KO-Huutokauppa</h2>
-	  <p>
-		Kätevä nettihuutokauppa sinunkin tarpeisiisi.
-		Liity asiakkaaksi jo tänään! <a href="{{ url_for('auth_register') }}">Rekisteröidy asiakkaaksi tästä</a>
-	  </p>
+      {% if not current_user.is_authenticated %}
+	  <p>Kätevä nettihuutokauppa sinunkin tarpeisiisi. Liity asiakkaaksi jo tänään! <a href="{{ url_for('auth_register') }}">Rekisteröidy asiakkaaksi tästä</a>
+      </p>
+      {% endif %}
 	  <p>
         Jos haluat asettaa tuotteita myytäväksi, lähetä sähköpostia Bull@Trumbull.bt ja saat ohjeet.
 	  </p>
