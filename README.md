@@ -46,11 +46,13 @@ HUOM:
 
 ## Linkit:
 
-<a href="https://tsoha-ko-huutokauppa.herokuapp.com">Sovellus Herokussa</a>
+<a href="https://tsoha-ko-huutokauppa.herokuapp.com">Kokeile sovellusta Herokussa</a>
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kayttotapaus.md">Kayttötapauskaavio</a>
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/tietokantakaavio.md">Tietokantakaavio</a>
+
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/asennusohje.md">Asennusohje</a>
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kayttoohje.md">Käyttöohje</a>
 
