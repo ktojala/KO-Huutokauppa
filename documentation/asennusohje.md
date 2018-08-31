@@ -1,17 +1,20 @@
 # KO-Huutokauppa
 
 Nykyinen sovellus on kenen tahansa kokeiltavissa Heroku-palvelussa: https://tsoha-ko-huutokauppa.herokuapp.com
+
 Sovellus on ladattavissa osoitteesta https://github.com/ktojala/KO-Huutokauppa
 
 ## Asennusohje Linux-koneellesi - alkutilanne
 
 Sinulla on koneellesi asennettuna Python-versio 3.5 tai uudempi.
 Käytössäsi tulee myös olla Pythonin pip-kirjasto apukirjastojen lataamiseen sekä venv-kirjasto
+
 (venv-kirjastolla voit luoda toisistaan riippumattomia Python-projekteja virtuaaliympäristöihin) 
+
 Tarvitset omalle koneellesi SQL-tietokantaohjelmiston.
 SQLite ja PostgreSQ käyvät tähän tarkoitukseen.
 
-## Asennusohje Linux-koneellesi - asennustoimet
+## Asennustoimet
 
 1. Paina github-sivun oikeasta ylälaidasta vihreää nappulaa "Clone or download" ja valitse "Download zip"
 2. Lataamisen jälkeen pura tiedostot komennolla "Extract To" esimerkiksi kansioon "home/username/gitti"
@@ -27,6 +30,6 @@ SQLite ja PostgreSQ käyvät tähän tarkoitukseen.
 ## Hyödyllinen tieto
 
 Jos sovellusta käynnistettäessä seuraavat taulut account, rooli, asiakasrooli ovat tyhjät, sovellus luo
-automaattisesti kaksi oletuskäyttäjää: admin ja testi. Käyttäjällä testi on ASIAKAS-rooli ja sen oikeudet, 
+automaattisesti kaksi oletuskäyttäjää: "testi" ja "admin". Käyttäjällä testi on ASIAKAS-rooli ja sitä vastaavat oikeudet, 
 käyttäjällä admin sen lisäksi ADMIN-rooli ja sitä vastaavat oikeudet.
 

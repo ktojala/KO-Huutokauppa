@@ -8,7 +8,7 @@ Voidaan ajatella, että kuka tahansa uusi vierailija joka avaa sovelluksen, toim
 
 ## Käyttöohje - kuka tahansa - ANY
 
-- Kuka tahansa voi selata tarjolla olevia tuotteita ja tuoteryhmiä.
+- Kuka tahansa vierailija sivustolla voi selata tarjolla olevia tuotteita ja tuoteryhmiä.
 - Ylärivin valikosta linkkien "Selaa tuoteryhmiä" ja "Selaa myytäviä" toiminnot ovat käytössä.
 - Toiminto "Selaa tuoteryhmiä" avaa tuoteryhmistä näkymän, joka kertoo tuoteryhmät ja montako tuotetta kussakin ryhmässä on myytävänä.
 - Tuoteryhmärivillä olevasta nappulasta "Avaa tuoteryhmä" voi klikata näkyviin kyseisessä tuoteryhmässä myytävänä olevat tuotteet. 
@@ -20,11 +20,20 @@ Voidaan ajatella, että kuka tahansa uusi vierailija joka avaa sovelluksen, toim
 
 ## Käyttöohje - ASIAKAS
 
-- Asiakkaaksi rekisteröitynyt voi tehdä myös ostotarjouksia
-- Asiakas voi laittaa tuotteita myyntiin vain ottamalla ensin yhteyttä osoitteeseen Bull@Trumbull.bt (eli ei voi)
+- Asiakkaaksi rekisteröitynyt voi tehdä kaiken sen mitä vierailijakin
+- Asiakas voi lisäksi tehdä ostotarjouksia klikkaamalla Myytavä tuote -näkymässä nappulaa "Tee tarjous"
+- Tarjouksentekosivulla on ohjeistus sitä, millainen tarjus on kelvollinen.
+- Jos tehty aarjous on kelvollinen, asiakas saa siitä vahvistuksen.
+- Jos tarjous ei ole kelvollinen, siitä tulee huomautus eikä tarjousta vahvisteta
+- Tarjousivulta pääsee pois peruuttamalla ja asettamalla tarjoukseksi 0 (euroa)
+- Tarjoussivulta pääsee pois myös klikkaamalla jotain yläpalkin linkkiä.
+- Asiakas voi katsoa omia tarjouksiaan klikkaamalla yläpalkin nappulaa "Omat tarjoukset"
+- Jos tarjous on mennyt läpi, tieto siitä tulee näkyviin "Omat tarjoukset" -sivulle. Tämän jälkeen asiakas jää odottamaan sähköpostia meklarilta.
+
+- Asiakas voi laittaa tuotteita myyntiin vain ottamalla yhteyttä meklariin osoitteeseen Bull@Trumbull.bt (eli ei voi)
 
 ## Käyttöohje - ADMIN
 
 - Admin-oikeuksilla voi perustaa tuoteryhmiä ja asettaa tuotteita myytäväksi
-- Admin-oikeuksilla voi myös poistaa tuotteita näkyvistä ja saada yhteenvetotietoa
+- Admin-oikeuksilla voi myös poistaa tuotteita näkyvistä ja saada monenlaista yhteenvetotietoa 
 
