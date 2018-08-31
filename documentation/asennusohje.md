@@ -1,6 +1,6 @@
 # KO-Huutokauppa
 
-Nykyinen sovellus on kenen tahansa kokeiltavissa Heroku-palvelussa: https://tsoha-ko-huutokauppa.herokuapp.com
+Sovellus on kenen tahansa kokeiltavissa Heroku-palvelussa: https://tsoha-ko-huutokauppa.herokuapp.com
 
 Sovellus on ladattavissa osoitteesta https://github.com/ktojala/KO-Huutokauppa
 
