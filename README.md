@@ -50,7 +50,7 @@ HUOM:
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kayttotapaus.md">Kayttötapauskaavio</a>
 
-<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kasite.md">Käsitekaavio</a>
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/tietokantakaavio.md">Tietokantakaavio</a>
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/kayttoohje.md">Käyttöohje</a>
 
