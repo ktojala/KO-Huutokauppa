@@ -1,4 +1,9 @@
-# CREATE TABLE lauseet
+
+# SQL-versiot
+
+Linux-ympäristössä käytössä on SQLite ja Herokussa PostgreSQL
+
+# CREATE TABLE -lauseet
 
 HUOM: Sovelluksen luokkaa Asiakas vastaava taulu on 'account'
 
@@ -67,13 +72,13 @@ CREATE TABLE asiakasrooli (
 	FOREIGN KEY(rooli_id) REFERENCES rooli (id)
 );
 
-# SQL kyselyt
+# SQL-kyselyt
 
-Useimmat kyselyt sovellukseessa on toteutettu SQLAlchemyn avulla.
+Useimmat kyselyt sovelluksessa on toteutettu SQLAlchemyn avulla.
 
 
 
-# SQLpoistot
+# SQL-poistot
 
 
 
