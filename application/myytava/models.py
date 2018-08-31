@@ -24,16 +24,8 @@ class Myytava(Base):
 
 
     @staticmethod
-    def loyda_kaikki():
-        stmt = ("SELECT myytava.name FROM myytava ORDER BY myytava.id;")
-        res = db.engine.execute(stmt)
-
-        return res
-
-
-    @staticmethod
     def anna_tuotenimi(syote):
-        res = db.engine.execute("SELECT myytava.name FROM myytava WHERE myytava.id=syote.id ORDER BY myytava.id").scalar()
+        res = db.engine.execute("SELECT myytava.name FROM myytava WHERE myytava.id=syote.id").scalar()
         return res
 
 
