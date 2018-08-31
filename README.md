@@ -1,6 +1,6 @@
 # KO-Huutokauppa
 
-Tietokantasovellusharjoitus - tehtävän kuvaus (kuvaukseen voi tulla vielä muutoksia)
+Tietokantasovellusharjoitus
 
 Huutokauppakamari KO-Huutokauppa halusi huutokauppajärjestelmän, jonka avulla se voi kaupata tuotteita verkossa.
 Huutokauppakamari luokittelee myyntiin saamansa tuotteet tai tuotetiedot ja laatii niistä myyntiesitteen. Esitteessä on mm. tuotteen kuvaus ja hinta. Siihen voi sisältyä tuotteen kuva. Esitteessä kerrotaan myös kuinka paljon myyntiaikaa on jäljellä. Kun myytävän kohteen huutokauppa on avattu, asiakas saa näkyviinsä sen tuotetiedot ja tämänhetkisen korkeimman tarjouksen.
