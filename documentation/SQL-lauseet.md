@@ -72,9 +72,42 @@ CREATE TABLE asiakasrooli (
 	FOREIGN KEY(rooli_id) REFERENCES rooli (id)
 );
 
-# SQL-kyselyt
+# SQL-kyselyt eri kansioissa
 
 Useimmat kyselyt sovelluksessa on toteutettu SQLAlchemyn avulla.
+
+## auth-kansiot:
+
+1. Etsitään nykyisen käyttäjän "current_user" roolit
+
+Rooli.query.join(Rooli.user_roles).filter_by(account_id=self.id).all()
+
+SELECT rooli.name FROM rooli JOIN asiakasrooli ON rooli.id= asiakasrooli.rooli_id JOIN account ON asiakasrooli.account_id = account.id WHERE account_id = current_user.id;
+
+2. Etsitään roolit käyttäjäĺle, jonka id on account_id, alla olevassa lauseessa "JOKIN_id"
+
+stmt=("SELECT DISTINCT Rooli.name FROM Rooli JOIN AsiakasRooli ON"
+                    " Rooli.id = AsiakasRooli.rooli_id WHERE AsiakasRooli.account_id = "
+                    "account_id").params(account_id=account_id)
+
+SELECT rooli.name FROM rooli JOIN asiakasrooli ON rooli.id= asiakasrooli.rooli_id JOIN account ON asiakasrooli.account_id = account.id WHERE account_id = JOKIN_id;
+
+3. Etsitään Asiakas jonka käyttäjätunnus ja salasana ovat kuten lomakkeessa. Ensimmäinen löydetty riittää.
+
+Asiakas.query.filter_by(username=form.username.data, password=form.password.data).first()
+
+SELECT * from account WHERE account.username = form.username.data AND account.password=form.password.data LIMIT 1;
+
+4. Luodaan uusia asiakas lomakkeen tiedoista
+
+asiakas = Asiakas(form.name.data,form.email.data, form.username.data, form.password.data)
+
+INSERT INTO account (name,email,username,password) VALUES (form.name.data,form.email.data, form.username.data, form.password.data)
+
+## tuoteryhmä-kansiot:
+
+
+
 
 
 

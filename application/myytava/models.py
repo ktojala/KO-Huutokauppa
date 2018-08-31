@@ -43,3 +43,4 @@ class Myytava(Base):
         res = db.engine.execute(stmt).scalar()
 
         return res
+

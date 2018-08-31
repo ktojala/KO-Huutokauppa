@@ -18,5 +18,4 @@ class Tuoteryhma(Base):
 
     @staticmethod
     def montako_tuotetta_ryhmassa(tr):
-
         return db.session.query(Myytava).filter_by(tuoteryhma_id=tr.id).count()

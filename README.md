@@ -44,7 +44,7 @@ Voit rekisteröityä myös omana erillisenä testikäyttäjänä, jolla on asiak
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/tietokantakaavio.md">Tietokantakaavio</a>
 
-<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/tietokantakaavio.md">SQL-kyselyt</a>
+<a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/SQL-lauseet.md">SQL-kyselyt</a>
 
 <a href="https://github.com/ktojala/KO-Huutokauppa/blob/master/documentation/asennusohje.md">Asennusohje</a>
 
