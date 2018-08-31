@@ -25,7 +25,6 @@ Toimintoja:
 ## Viime hetken SUUNNITELMA työn viimeistelyyn
 
 - Näytä korkeimmat tarjoukset tarjousajaltaan umpeutuneista
-- Poista korkein tarjous (jos se osoittautui epäkelvoksi)
 
 ## Kirjautuminen asiakkaana:
 - Käyttäjätunnus: testi

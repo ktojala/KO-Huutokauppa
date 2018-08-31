@@ -36,3 +36,4 @@ class Myytava(Base):
 
         return res
 
+

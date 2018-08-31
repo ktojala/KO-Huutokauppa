@@ -9,6 +9,7 @@
       <th>Asiakas</th>
       <th>Myytävä</th>
       <th>Tarjous (eur)</th>
+      <th></th>
 
       <th></th>
     </tr>
@@ -19,6 +20,9 @@
       <td>{{ tarjous.myytavan_nimi(tarjous.myytava_id)[0] }}</td>
       <td>{{ tarjous.tarjoussumma }}</td>
 
+    {% if tarjous.umpeutunut(tarjous.myytava_id) %}
+      <td>Tarjouksesi meni läpi! - Saat lähipäivinä viestin meklarilta</td>
+    {% endif %}
 
     </tr>
     {% endfor %}

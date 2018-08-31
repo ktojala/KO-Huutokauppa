@@ -1,6 +1,7 @@
 from application import db
 from application.models import Base
 from application.myytava.models import Myytava
+
 from sqlalchemy.sql import text
   
 class Tarjous(Base):
@@ -35,3 +36,13 @@ class Tarjous(Base):
         db.engine.execute(stmt)
         return
 
+
+    @staticmethod
+    def umpeutunut(m_id):
+        stmt = text("SELECT myytava.tarjousaikaa FROM myytava WHERE myytava.id = :idi").params(idi=m_id)
+        res = db.engine.execute(stmt).scalar()
+
+        if res == 0:
+            return True
+        else:
+            return False
