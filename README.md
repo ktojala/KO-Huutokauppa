@@ -19,11 +19,12 @@ Vain huutokauppakamarin edustaja (admin) voi lisätä huutokaupan sivuille tuott
 - Asiakas näkee omat tarjouksensa
 - Asiakas näkee onko oma tarjous mennyt läpi
 - Admin voi tehdä kaiken sen mitä Asiakas
+- Huutokauppakamarin edustajilla on admin-oikeudet
 - Admin voi lisätä tuoteryhmiä
 - Admin voi poistaa tuoteryhmän jossa ei ole tuotteita myytävänä
 - Admin voi listata tuotteet jotka ovat myynnissä ja joista ei ole tehty tarjouksia vielä
 - Admin voi vähentää kaikista tarjousajoista päivän. (Tämä pitää tehdä jokaisen päivän lopussa)
-- Admin voi listata tuotteet joiden tarjousaik on umpeutunut (eli tarjousaikaa = 0)
+- Admin voi listata tuotteet joiden tarjousaika on umpeutunut (eli tarjousaikaa = 0)
 - Admin voi poistaa sellaisen myytävän tuotteen jonka tarjousaika on umpeutunut. Samalla poistuvat kaikki kyseisestä kohteesta tehdyt tarjoukset.
 
 - Näytä korkeimmat tarjoukset ja tarjojan sähköpostiosoite tarjousajaltaan umpeutuneista ei ehtinyt valmiiksi
